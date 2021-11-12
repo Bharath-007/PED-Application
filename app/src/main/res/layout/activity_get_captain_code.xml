@@ -4,47 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    tools:context=".GetCaptainCode"
     android:weightSum="6"
-    tools:context=".PEDRegistration">
+    android:orientation="vertical">
 
     <LinearLayout
+        android:layout_marginTop="100dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight=".8"
+        android:layout_weight="1"
         android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="PED REGISTRATION"
-            android:textColor="@color/black"
+            android:text="Enter a five digit code for the captains"
             android:textSize="25sp"
-            android:fontFamily="@font/futuramediumbt">
-
+            android:textAlignment="center"
+            android:fontFamily="@font/futuramediumbt"
+            android:textColor="@color/black">
         </TextView>
-
 
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="180dp"
         android:orientation="vertical"
-        android:layout_weight="5.2">
+        android:layout_weight="4">
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/ed1"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="48dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="50dp"
             android:layout_marginRight="48dp"
-            app:passwordToggleEnabled="true"
-            android:layout_weight=".7"
             android:enabled="true"
-            android:hint="Enter code"
+            android:hint="Eg. 54321"
             app:passwordToggleTint="@color/black"
             android:textColorHint="@color/black"
             app:boxStrokeColor="@color/black"
@@ -53,13 +48,13 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/captaincode"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:drawableStart="@drawable/login_password_icon"
                 android:drawableTint="@color/black"
                 android:drawablePadding="10dp"
-                android:maxLength="5"
                 android:maxLines="1"
                 android:paddingStart="20dp"
+                android:maxLength="5"
                 android:paddingEnd="40dp"
                 android:inputType="numberPassword"
                 android:textAlignment="center"
@@ -73,19 +68,16 @@
 
         <com.google.android.material.button.MaterialButton
             android:layout_width="match_parent"
-            android:id="@+id/pedregisterbtn"
+            android:id="@+id/confirmbtn"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="50dp"
             android:layout_marginLeft="90dp"
-            android:text="Register"
-            android:layout_marginBottom="50dp"
+            android:text="Confirm"
             android:textColor="@color/white"
             android:background="@drawable/btnshape"
             app:backgroundTint="@color/black"
             android:backgroundTint="@color/liteBlue"
             android:layout_marginRight="90dp"
-            android:textSize="20sp"
-            />
+            android:textSize="20sp" />
     </LinearLayout>
-
 </LinearLayout>
