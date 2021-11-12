@@ -18,7 +18,7 @@
             android:layout_height="match_parent"
             android:text="REGISTRATION"
             android:textSize="32sp"
-            android:textColor="@color/red"
+            android:textColor="@color/black"
             android:layout_gravity="center"
             android:gravity="center"
             android:fontFamily="@font/berlinsansfbregular">
@@ -32,19 +32,20 @@
         android:gravity="center"
         android:layout_weight="4"
         android:orientation="vertical">
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/pedbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="75dp"
             android:layout_marginLeft="75dp"
             android:text="P.E.D"
+            app:backgroundTint="@color/black"
             android:background="@drawable/btnshape"
             android:fontFamily="@font/berlinsansfbregular"
             android:textSize="28sp">
 
-        </Button>
-        <Button
+        </com.google.android.material.button.MaterialButton>
+        <com.google.android.material.button.MaterialButton
 
             android:id="@+id/captainbtn"
             android:layout_width="match_parent"
@@ -52,12 +53,13 @@
             android:layout_marginRight="75dp"
             android:layout_marginLeft="75dp"
             android:text="Captain"
+            app:backgroundTint="@color/black"
             android:layout_marginTop="20dp"
             android:background="@drawable/btnshape"
             android:fontFamily="@font/futuramediumbt"
             android:textSize="28sp">
 
-        </Button>
+        </com.google.android.material.button.MaterialButton>
 
 
     </LinearLayout>
