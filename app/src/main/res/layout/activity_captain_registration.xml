@@ -35,6 +35,16 @@
         android:gravity="center"
         android:orientation="vertical">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:text="Captain Registration"
+            android:textColor="@color/black"
+            android:fontFamily="@font/futuramediumbt"
+            android:layout_marginBottom="20dp"
+            android:textSize="30sp"/>
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/ed14"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
@@ -115,12 +125,13 @@
             android:layout_height="0dp"
             android:layout_weight="0.7"
             android:layout_marginTop="40dp"
-            android:layout_marginLeft="90dp"
+            android:layout_marginLeft="120dp"
             android:text="Register"
             android:textColor="@color/white"
-            android:backgroundTint="@color/liteBlue"
-            android:layout_marginRight="90dp"
-            android:textSize="18sp"
+            android:fontFamily="@font/berlinsansfbregular"
+            android:backgroundTint="@color/blue"
+            android:layout_marginRight="120dp"
+            android:textSize="20sp"
             />
 
 
