@@ -7,7 +7,6 @@
     tools:context=".CaptainRegistration"
     android:weightSum="6"
 
-
     android:orientation="vertical">
 
     <LinearLayout
@@ -111,7 +110,16 @@
 
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
-
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.6"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="90dp"
+            android:text="Register"
+            android:layout_marginRight="90dp"
+            android:textSize="20sp"
+            />
 
 
 
