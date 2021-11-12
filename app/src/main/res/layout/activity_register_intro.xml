@@ -18,7 +18,7 @@
             android:layout_height="match_parent"
             android:text="REGISTRATION"
             android:textSize="32sp"
-            android:textColor="@color/red"
+            android:textColor="@color/black"
             android:layout_gravity="center"
             android:gravity="center"
             android:fontFamily="@font/berlinsansfbregular">
@@ -30,7 +30,7 @@
         android:layout_height="0dp"
         android:layout_gravity="center"
         android:gravity="center"
-        android:layout_weight="4"
+        android:layout_weight="5.2"
         android:orientation="vertical">
         <Button
             android:id="@+id/pedbtn"
