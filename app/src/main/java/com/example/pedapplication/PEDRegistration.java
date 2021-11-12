@@ -3,8 +3,11 @@ package com.example.pedapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Button;
 
 public class PEDRegistration extends AppCompatActivity {
+
+    Button registerbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
