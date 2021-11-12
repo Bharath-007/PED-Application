@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">PED Application</string>
+    <string-array name="games">
+        <item>Athletics</item>
+        <item>Badminton</item>
+        <item>Ball Badminton</item>
+        <item>Basketball</item>
+        <item>Carrom</item>
+        <item>Chess</item>
+        <item>Cricket</item>
+        <item>Football</item>
+        <item>Hockey</item>
+        <item>Kabaddi</item>
+        <item>Kho Kho</item>
+        <item>Martial Arts</item>
+        <item>Throwball</item>
+        <item>Table Tennis</item>
+        <item>VolleyBall</item>
+
+    </string-array>
 </resources>
