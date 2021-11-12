@@ -25,5 +25,12 @@ public class RegisterIntro extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        pedbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),PEDRegistration.class));
+            }
+        });
     }
 }
