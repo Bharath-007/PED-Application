@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CaptainRegistration"
+    android:weightSum="6"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="CAPTAIN REGISTRATION"
+            android:textSize="28sp"
+            android:fontFamily="@font/berlinsansfbregular"
+            android:layout_gravity="center"
+            android:textColor="@color/black">
+
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:weightSum="5"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ed1"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="48dp"
+            android:layout_weight=".7"
+            android:enabled="true"
+            android:hint="Select game"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:endIconDrawable="@drawable/drpdownvector"
+            app:endIconMode="dropdown_menu"
+            app:endIconTint="@color/black"
+            app:hintTextColor="@color/black">
+
+            <AutoCompleteTextView
+                android:id="@+id/games"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:completionThreshold="1"
+                android:drawableStart="@drawable/leader"
+                android:drawableTint="@color/black"
+                android:drawablePadding="10dp"
+                android:maxLines="1"
+                android:paddingStart="20dp"
+                android:paddingEnd="40dp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cursorSelect"
+                android:textCursorDrawable="@null"
+                android:textSize="14sp">
+
+            </AutoCompleteTextView>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/captaincode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="50dp"
+            android:paddingLeft="10dp"
+            android:layout_marginRight="50dp"
+            android:drawableStart="@drawable/login_password_icon"
+            android:drawablePadding="15dp"
+            android:drawableTint="@color/black"
+            android:text="Enter code"
+            android:fontFamily="@font/futuramediumbt"
+            android:inputType="text"
+            android:maxLines="1"
+            android:paddingEnd="20dp"
+            android:textColor="@color/black"
+            android:textCursorDrawable="@null"
+            android:textSize="16sp"
+            />
+
+    </LinearLayout>
+        
+        
+
+</LinearLayout>

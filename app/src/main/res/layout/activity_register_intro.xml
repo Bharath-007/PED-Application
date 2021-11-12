@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterIntro"
+    android:weightSum="6"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="REGISTRATION"
+            android:textSize="32sp"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:fontFamily="@font/berlinsansfbregular">
+
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+
+        android:layout_weight="4"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/pedbtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="75dp"
+            android:layout_marginLeft="75dp"
+            android:text="PED"
+            android:background="@drawable/btnshape"
+            android:fontFamily="@font/berlinsansfbregular"
+            android:textSize="28sp">
+
+        </Button>
+        <Button
+
+            android:id="@+id/captainbtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="75dp"
+            android:layout_marginLeft="75dp"
+            android:text="Captain"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/btnshape"
+            android:fontFamily="@font/futuramediumbt"
+            android:textSize="28sp">
+
+        </Button>
+
+
+    </LinearLayout>
+</LinearLayout>
