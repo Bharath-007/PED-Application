@@ -23,7 +23,7 @@
             android:textSize="28sp"
             android:fontFamily="@font/berlinsansfbregular"
             android:layout_gravity="center"
-            android:textColor="@color/black">
+            android:textColor="@color/red">
 
         </TextView>
     </LinearLayout>
