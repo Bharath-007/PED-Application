@@ -30,7 +30,6 @@
         android:layout_height="0dp"
         android:layout_gravity="center"
         android:gravity="center"
-
         android:layout_weight="4"
         android:orientation="vertical">
         <Button
@@ -39,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="75dp"
             android:layout_marginLeft="75dp"
-            android:text="PED"
+            android:text="P.E.D"
             android:background="@drawable/btnshape"
             android:fontFamily="@font/berlinsansfbregular"
             android:textSize="28sp">
