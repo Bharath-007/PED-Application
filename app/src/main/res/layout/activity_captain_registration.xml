@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".CaptainRegistration"
     android:weightSum="6"
-    android:background="@drawable/bgreg1"
     android:orientation="vertical">
 
     <LinearLayout
@@ -23,7 +22,8 @@
             android:paddingStart="30dp"
             android:fontFamily="@font/berlinsansfbregular"
             android:layout_gravity="center"
-            android:textColor="@color/white">
+
+            android:textColor="@color/black">
 
         </TextView>
     </LinearLayout>
@@ -49,11 +49,11 @@
             android:enabled="true"
             android:hint="Select game"
             android:textColorHint="@color/black"
-            app:boxStrokeColor="@color/white"
+            app:boxStrokeColor="@color/black"
             app:endIconDrawable="@drawable/drpdownvector"
             app:endIconMode="dropdown_menu"
             app:hintTextColor="@color/white"
-            app:endIconTint="@color/white">
+            app:endIconTint="@color/black">
 
             <AutoCompleteTextView
                 android:id="@+id/games"
@@ -63,13 +63,13 @@
                 android:completionThreshold="1"
                 android:inputType="none"
                 android:drawableStart="@drawable/leader"
-                android:drawableTint="@color/white"
+                android:drawableTint="@color/black"
                 android:drawablePadding="10dp"
                 android:maxLines="1"
                 android:paddingStart="20dp"
                 android:paddingEnd="40dp"
                 android:textAlignment="center"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textColorHighlight="@color/cursorSelect"
                 android:textCursorDrawable="@null"
                 android:textSize="14sp">
@@ -88,10 +88,10 @@
             android:layout_weight=".7"
             android:enabled="true"
             android:hint="Enter code"
-            app:passwordToggleTint="@color/white"
-            android:textColorHint="@color/white"
-            app:boxStrokeColor="@color/white"
-            app:hintTextColor="@color/white">
+            app:passwordToggleTint="@color/black"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:hintTextColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/captaincode"
@@ -105,7 +105,7 @@
                 android:paddingEnd="40dp"
                 android:inputType="numberPassword"
                 android:textAlignment="center"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textColorHighlight="@color/cursorSelect"
                 android:textCursorDrawable="@null"
                 android:textSize="14sp">
@@ -120,7 +120,7 @@
             android:layout_marginLeft="90dp"
             android:text="Register"
             android:textColor="@color/black"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/liteBlue"
             android:layout_marginRight="90dp"
             android:textSize="20sp"
             />
