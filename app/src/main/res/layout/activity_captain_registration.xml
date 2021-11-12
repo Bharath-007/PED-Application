@@ -19,10 +19,8 @@
             android:gravity="center"
             android:text="CAPTAIN REGISTRATION"
             android:textSize="28sp"
-            android:paddingStart="30dp"
             android:fontFamily="@font/berlinsansfbregular"
             android:layout_gravity="center"
-
             android:textColor="@color/black">
 
         </TextView>
