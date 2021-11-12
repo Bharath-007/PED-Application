@@ -30,7 +30,7 @@
         android:layout_height="0dp"
         android:layout_gravity="center"
         android:gravity="center"
-        android:layout_weight="4"
+        android:layout_weight="5.2"
         android:orientation="vertical">
         <com.google.android.material.button.MaterialButton
             android:id="@+id/pedbtn"
