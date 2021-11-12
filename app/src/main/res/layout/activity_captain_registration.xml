@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".CaptainRegistration"
     android:weightSum="6"
-
+    android:background="@drawable/bgreg1"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="0.8"
         android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
@@ -20,19 +20,21 @@
             android:gravity="center"
             android:text="CAPTAIN REGISTRATION"
             android:textSize="28sp"
+            android:paddingStart="30dp"
             android:fontFamily="@font/berlinsansfbregular"
             android:layout_gravity="center"
-            android:textColor="@color/black">
+            android:textColor="@color/white">
 
         </TextView>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5"
+        android:layout_weight="5.2"
         android:weightSum="6"
         android:layout_gravity="center"
-        android:gravity="center"
+        android:gravity="bottom"
+        android:paddingBottom="70dp"
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
@@ -47,7 +49,7 @@
             android:enabled="true"
             android:hint="Select game"
             android:textColorHint="@color/black"
-            app:boxStrokeColor="@color/black"
+            app:boxStrokeColor="@color/white"
             app:endIconDrawable="@drawable/drpdownvector"
             app:endIconMode="dropdown_menu"
             app:hintTextColor="@color/black"
@@ -113,10 +115,12 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.6"
+            android:layout_weight="0.7"
             android:layout_marginTop="40dp"
             android:layout_marginLeft="90dp"
             android:text="Register"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white"
             android:layout_marginRight="90dp"
             android:textSize="20sp"
             />
