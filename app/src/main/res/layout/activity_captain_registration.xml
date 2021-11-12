@@ -52,7 +52,7 @@
             app:boxStrokeColor="@color/black"
             app:endIconDrawable="@drawable/drpdownvector"
             app:endIconMode="dropdown_menu"
-            app:hintTextColor="@color/white"
+            app:hintTextColor="@color/black"
             app:endIconTint="@color/black">
 
             <AutoCompleteTextView
