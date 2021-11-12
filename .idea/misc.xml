@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/PED/PEDApplication/app/src/main/res/layout/activity_captain_registration.xml" value="0.1793478260869565" />
+        <entry key="..\:/PED/PEDApplication/app/src/main/res/layout/activity_pedregistration.xml" value="0.14375" />
+        <entry key="..\:/PED/PEDApplication/app/src/main/res/layout/activity_register_intro.xml" value="0.1793478260869565" />
+        <entry key="..\:/PED/PEDApplication/app/src/main/res/layout/activity_splash_screen.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/Sathya Prakaash/AndroidStudioProjects/PEDApplication/app/src/main/res/drawable/btnshape.xml" value="0.18871794871794872" />
         <entry key="..\:/Users/Sathya Prakaash/AndroidStudioProjects/PEDApplication/app/src/main/res/layout/activity_captain_registration.xml" value="0.1" />
         <entry key="..\:/Users/Sathya Prakaash/AndroidStudioProjects/PEDApplication/app/src/main/res/layout/activity_register_intro.xml" value="0.17552083333333332" />

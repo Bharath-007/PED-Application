@@ -18,7 +18,7 @@
             android:layout_height="match_parent"
             android:text="REGISTRATION"
             android:textSize="32sp"
-            android:textColor="@color/black"
+            android:textColor="@color/red"
             android:layout_gravity="center"
             android:gravity="center"
             android:fontFamily="@font/berlinsansfbregular">
