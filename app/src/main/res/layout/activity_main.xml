@@ -13,16 +13,17 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="5.9"
+        android:weightSum="0.2"
         android:orientation="vertical"
         >
 
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:gravity="center"
             android:orientation="vertical"
-            android:layout_weight="0.4"
+            android:layout_weight="0.1"
             >
 
             <TextView
@@ -30,10 +31,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ADD STUDENTS"
-                android:gravity="center"
                 android:fontFamily="@font/berlinsansfbregular"
                 android:textColor="@color/black"
-                android:layout_gravity="center"
                 android:textSize="35sp"
                 >
 
@@ -42,12 +41,7 @@
 
 
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_marginTop="50dp"
-            android:layout_height="140dp"
-            android:layout_weight="10"
-            android:orientation="vertical">
+
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/studentname"
