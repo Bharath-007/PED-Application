@@ -3,14 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/PED/PEDApplication/app/src/main/res/layout/activity_captain_registration.xml" value="0.264" />
-        <entry key="..\:/PED/PEDApplication/app/src/main/res/layout/activity_pedregistration.xml" value="0.152" />
-        <entry key="..\:/PED/PEDApplication/app/src/main/res/layout/activity_register_intro.xml" value="0.264" />
-        <entry key="..\:/PED/PEDApplication/app/src/main/res/layout/activity_splash_screen.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/Sathya Prakaash/AndroidStudioProjects/PEDApplication/app/src/main/res/drawable/btnshape.xml" value="0.18871794871794872" />
-        <entry key="..\:/Users/Sathya Prakaash/AndroidStudioProjects/PEDApplication/app/src/main/res/layout/activity_captain_registration.xml" value="0.1" />
+        <entry key="..\:/Users/Sathya Prakaash/AndroidStudioProjects/PEDApplication/app/src/main/res/drawable/ic_baseline_group_add_24.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/Sathya Prakaash/AndroidStudioProjects/PEDApplication/app/src/main/res/drawable/ic_baseline_reply_24.xml" value="0.19166666666666668" />
+        <entry key="..\:/Users/Sathya Prakaash/AndroidStudioProjects/PEDApplication/app/src/main/res/layout/activity_captain_registration.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Sathya Prakaash/AndroidStudioProjects/PEDApplication/app/src/main/res/layout/activity_get_captain_code.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/Sathya Prakaash/AndroidStudioProjects/PEDApplication/app/src/main/res/layout/activity_login.xml" value="0.16145833333333334" />
+        <entry key="..\:/Users/Sathya Prakaash/AndroidStudioProjects/PEDApplication/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/Sathya Prakaash/AndroidStudioProjects/PEDApplication/app/src/main/res/layout/activity_pedregistration.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/Sathya Prakaash/AndroidStudioProjects/PEDApplication/app/src/main/res/layout/activity_register_intro.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/Sathya Prakaash/AndroidStudioProjects/PEDApplication/app/src/main/res/layout/activity_splash_screen.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/Sathya Prakaash/AndroidStudioProjects/PEDApplication/app/src/main/res/layout/studentitem.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/Sathya Prakaash/AndroidStudioProjects/PEDApplication/app/src/main/res/layout/toolbar2.xml" value="0.1875" />
+        <entry key="..\:/Users/Sathya Prakaash/AndroidStudioProjects/PEDApplication/app/src/main/res/menu/activity_main_drawer.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/Sathya Prakaash/AndroidStudioProjects/PEDApplication/app/src/main/res/menu/navigation_drawer.xml" value="0.17552083333333332" />
       </map>
     </option>
   </component>
