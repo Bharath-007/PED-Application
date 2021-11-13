@@ -59,11 +59,12 @@ public class GetCaptainCode extends AppCompatActivity {
         documentReference.set(hm).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
-                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                SharedPreferences.Editor editor = prefs.edit();
-                editor.putString("message", code); //InputString: from the EditText
-                editor.commit();
+//                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+//                SharedPreferences.Editor editor = prefs.edit();
+//                editor.putString("message", code); //InputString: from the EditText
+//                editor.commit();
                 startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                Toast.makeText(getApplicationContext(), "Login now", Toast.LENGTH_SHORT).show();
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override

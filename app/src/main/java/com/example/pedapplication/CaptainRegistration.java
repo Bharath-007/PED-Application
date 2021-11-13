@@ -77,15 +77,10 @@ public class CaptainRegistration extends AppCompatActivity {
                 }
 
                 putDetails(hm);
-                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                startActivity(new Intent(getApplicationContext(),GetCaptainCode.class));
                 Toast.makeText(getApplicationContext(), "Login now", Toast.LENGTH_SHORT).show();
             }
         });
-
-
-
-
-
 
 
     }

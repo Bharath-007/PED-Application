@@ -38,7 +38,7 @@ public class PEDRegistration extends AppCompatActivity {
                     return;
                 }
 
-                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                startActivity(new Intent(getApplicationContext(),GetCaptainCode.class));
                 Toast.makeText(getApplicationContext(), "Login now", Toast.LENGTH_SHORT).show();
             }
         });
