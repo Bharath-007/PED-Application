@@ -47,7 +47,7 @@
             android:hint="Enter code"
             app:passwordToggleTint="@color/black"
             android:textColorHint="@color/black"
-            app:boxStrokeColor="@color/blue"
+            app:boxStrokeColor="@color/black"
             app:hintTextColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -72,6 +72,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:id="@+id/pedregisterbtn"
             android:layout_height="wrap_content"

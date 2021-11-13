@@ -14,17 +14,6 @@
         android:layout_weight="2.5"
         android:background="@drawable/bg1"
         android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="CAPTAIN REGISTRATION"
-            android:textSize="28sp"
-            android:fontFamily="@font/berlinsansfbregular"
-            android:layout_gravity="center"
-            android:textColor="@color/black">
-
-        </TextView>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -122,15 +111,17 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:id="@+id/registerbtn"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_marginLeft="120dp"
             android:layout_marginTop="40dp"
-            android:layout_marginRight="120dp"
             android:layout_weight="0.7"
-            android:backgroundTint="@color/blue"
-            android:fontFamily="@font/berlinsansfbregular"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:background="@drawable/btnshape"
+            app:backgroundTint="@color/blue"
+            android:fontFamily="@font/poppinsmedium"
             android:text="Register"
             android:textColor="@color/white"
             android:textSize="20sp" />
