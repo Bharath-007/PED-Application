@@ -1,17 +1,18 @@
 package com.example.pedapplication;
 
 public class Students {
-    public Students(String name, String registerNumber, String batch, String department) {
+    public Students(String name, String registerNumber, String batch, String department,String year) {
         this.name = name;
         this.registerNumber = registerNumber;
         this.batch = batch;
         this.department = department;
+        this.year = year;
     }
 
     public Students() {
     }
 
-    String name,registerNumber,batch,department;
+    String name,registerNumber,batch,department,year;
 
 
     public String getName() {
@@ -20,6 +21,14 @@ public class Students {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
     }
 
     public String getRegisterNumber() {
