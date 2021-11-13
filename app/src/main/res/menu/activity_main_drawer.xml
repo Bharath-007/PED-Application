@@ -7,7 +7,7 @@
         <item
             android:id="@+id/addstudents"
             android:icon="@drawable/ic_baseline_group_add_24"
-            android:title="Add Students" />
+            android:title="Add Students"/>
 
         <item
             android:id="@+id/logout"

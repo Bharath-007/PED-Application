@@ -33,10 +33,54 @@
                 android:textColor="@color/black">
 
             </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="-"
+
+                android:textSize="22sp"
+                android:fontFamily="@font/futuramediumbt"
+                android:textColor="@color/black">
+
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/deptsingleitem"
+                android:layout_marginStart="10dp"
+                android:text="CSE"
+                android:textSize="22sp"
+                android:fontFamily="@font/futuramediumbt"
+                android:textColor="@color/black">
+
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="-"
+                android:textSize="22sp"
+                android:fontFamily="@font/futuramediumbt"
+                android:textColor="@color/black">
+
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/currentyear"
+                android:layout_marginStart="10dp"
+                android:text="1"
+                android:textSize="22sp"
+                android:fontFamily="@font/futuramediumbt"
+                android:textColor="@color/black">
+
+            </TextView>
 
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/statusview"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
@@ -62,7 +106,7 @@
                     android:id="@+id/gameslogin"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="2"
+                    android:layout_weight="3"
                     android:completionThreshold="1"
                     android:drawableStart="@drawable/leader"
                     android:drawablePadding="10dp"

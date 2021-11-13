@@ -13,13 +13,14 @@
             android:name=".AddStudent"
             android:exported="true" />
         <activity
-            android:name=".addStudent"
+            android:name=".CaptainRegistration"
             android:exported="true" />
+
         <activity
             android:name=".PEDRegistration"
             android:exported="true" />
         <activity
-            android:name=".CaptainRegistration"
+            android:name=".GetCaptainCode"
             android:exported="true" />
         <activity
             android:name=".RegisterIntro"
