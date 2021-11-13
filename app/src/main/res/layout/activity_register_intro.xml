@@ -11,53 +11,40 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.8"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="REGISTRATION"
-            android:textSize="32sp"
-            android:textColor="@color/black"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:fontFamily="@font/berlinsansfbregular">
-
-        </TextView>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
         android:layout_gravity="center"
         android:gravity="center"
-        android:layout_weight="5.2"
+        android:layout_weight="6"
+        android:weightSum="6"
         android:orientation="vertical">
         <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:id="@+id/pedbtn"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="0.47"
             android:layout_marginRight="75dp"
             android:layout_marginLeft="75dp"
-            android:text="P.E.D"
-            app:backgroundTint="@color/black"
+            android:text="P.E.D Staff"
+            app:backgroundTint="@color/blue"
             android:background="@drawable/btnshape"
-            android:fontFamily="@font/berlinsansfbregular"
-            android:textSize="28sp">
+            android:fontFamily="@font/poppinsmedium"
+            android:textSize="24sp">
 
         </com.google.android.material.button.MaterialButton>
         <com.google.android.material.button.MaterialButton
-
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:id="@+id/captainbtn"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="0.47"
             android:layout_marginRight="75dp"
             android:layout_marginLeft="75dp"
             android:text="Captain"
-            app:backgroundTint="@color/black"
-            android:layout_marginTop="20dp"
+            app:backgroundTint="@color/blue"
+            android:layout_marginTop="30dp"
             android:background="@drawable/btnshape"
-            android:fontFamily="@font/futuramediumbt"
-            android:textSize="28sp">
+            android:fontFamily="@font/poppinsmedium"
+            android:textSize="24sp">
 
         </com.google.android.material.button.MaterialButton>
 
