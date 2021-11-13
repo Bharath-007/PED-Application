@@ -23,6 +23,9 @@
             android:name=".GetCaptainCode"
             android:exported="true" />
         <activity
+            android:name=".LoginActivity"
+            android:exported="true" />
+        <activity
             android:name=".RegisterIntro"
             android:exported="true" />
         <activity
