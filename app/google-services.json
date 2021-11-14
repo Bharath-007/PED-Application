@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "117044720246",
+    "project_id": "ped-application",
+    "storage_bucket": "ped-application.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:117044720246:android:72a10a2332ed9cc0812557",
+        "android_client_info": {
+          "package_name": "com.example.pedapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "117044720246-sol6b8e8nu3im2l515vnop4mngl36ucl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_8dmuscAZ-zVVsMIZsE9Z9eSVaTN0bYA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "117044720246-sol6b8e8nu3im2l515vnop4mngl36ucl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
