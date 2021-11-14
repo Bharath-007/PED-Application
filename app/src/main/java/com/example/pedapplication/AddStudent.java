@@ -119,7 +119,7 @@ public class AddStudent extends AppCompatActivity {
                 String batch1 = batch.getText().toString();
                 String year1 = year.getText().toString();
                 String gender1 = gender.getText().toString();
-                String docname = studentName + rollNo;
+                String docname = studentName + " " +  rollNo;
 
                 hm.put("name",studentName);
                 hm.put("rollno",rollNo);

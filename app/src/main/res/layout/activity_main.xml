@@ -61,7 +61,7 @@
             android:layout_width="0dp"
             android:id="@+id/confrimbtnmain"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="1.5"
             android:text="Confirm"
             android:layout_margin="8dp"
             android:fontFamily="@font/futuramediumbt"
@@ -72,7 +72,7 @@
         <com.google.android.material.button.MaterialButton
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="2"
+            android:layout_weight="1.5"
             android:layout_margin="8dp"
             android:id="@+id/addstudentbtn"
             android:text="Add students"

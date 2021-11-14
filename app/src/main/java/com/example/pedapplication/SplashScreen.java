@@ -6,6 +6,7 @@ import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -25,7 +26,7 @@ public class SplashScreen extends AppCompatActivity {
         logo = findViewById(R.id.logo);
         logo.setAnimation(top_animation);
         new Handler().postDelayed(() -> {
-            Intent intent= new Intent(SplashScreen.this, RegisterIntro.class);
+            Intent intent= new Intent(SplashScreen.this, LoginActivity.class);
 //                startActivity(intent);
             startActivity(intent,
                     ActivityOptions.makeSceneTransitionAnimation(SplashScreen.this).toBundle());

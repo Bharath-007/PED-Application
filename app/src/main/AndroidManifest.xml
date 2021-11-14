@@ -10,12 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PEDApplication.NoActionAndStatusBar">
         <activity
+            android:name=".PedCalender"
+            android:exported="true" />
+        <activity
             android:name=".AddStudent"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".CaptainRegistration"
             android:exported="true" />
-
         <activity
             android:name=".PEDRegistration"
             android:exported="true" />
@@ -24,19 +26,18 @@
             android:exported="true" />
         <activity
             android:name=".LoginActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".RegisterIntro"
             android:exported="true" />
         <activity
             android:name=".SplashScreen"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"

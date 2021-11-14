@@ -42,14 +42,10 @@ public class LoginActivity extends AppCompatActivity {
     TextView gotoRegister;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-
 
 
         gotoRegister = findViewById(R.id.gotoregister);
@@ -62,9 +58,8 @@ public class LoginActivity extends AppCompatActivity {
         EventChangeListener();
         arrayList = new ArrayList<>();
         arrayList.add("P.E.D");
-        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,arrayList);
+        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, arrayList);
         game.setAdapter(adapter);
-
 
 
         loginbtn.setOnClickListener(new View.OnClickListener() {
@@ -78,20 +73,32 @@ public class LoginActivity extends AppCompatActivity {
                 editor.putString("message", gameName); //InputString: from the EditText
                 editor.commit();
 
-                if(gameName.isEmpty()){
+                if (gameName.isEmpty()) {
                     Toast.makeText(getApplicationContext(), "Please select a game", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if(code1.isEmpty()){
-                    Toast.makeText(getApplicationContext(), "This filed should not be empty", Toast.LENGTH_SHORT).show();
+                if (gameName.equals("P.E.D")) {
+                    if (code1.isEmpty()) {
+                        Toast.makeText(getApplicationContext(), "This field should not be empty", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    if (!code1.equals("88833")) {
+                        Toast.makeText(getApplicationContext(), "Wrong code. Try again", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    startActivity(new Intent(getApplicationContext(), PedCalender.class));
+                    return;
+                }
+                if (code1.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "This field should not be empty", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if(!code1.equals(code2)){
+                if (!code1.equals(code2)) {
                     Toast.makeText(getApplicationContext(), "Wrong code. Try again", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
 
             }
         });
@@ -100,7 +107,7 @@ public class LoginActivity extends AppCompatActivity {
         gotoRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),RegisterIntro.class);
+                Intent intent = new Intent(getApplicationContext(), RegisterIntro.class);
                 startActivity(intent);
             }
         });
@@ -111,34 +118,35 @@ public class LoginActivity extends AppCompatActivity {
 
     private void EventChangeListener() {
         firestore
-        .collection("captains").orderBy("game", Query.Direction.ASCENDING).addSnapshotListener(new EventListener<QuerySnapshot>() {
-                    @Override
-                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                .collection("captains").orderBy("game", Query.Direction.ASCENDING).addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
 
-                        if (error != null) {
+                if (error != null) {
 
-                            Log.e("Firestore error", error.getMessage());
-                            return;
-                        }
+                    Log.e("Firestore error", error.getMessage());
+                    return;
+                }
 
-                        for (DocumentChange dc : value.getDocumentChanges()) {
+                for (DocumentChange dc : value.getDocumentChanges()) {
 
-                            if (dc.getType() == DocumentChange.Type.ADDED) {
+                    if (dc.getType() == DocumentChange.Type.ADDED) {
 
-                                arrayList.add(dc.getDocument().get("game").toString());
+                        arrayList.add(dc.getDocument().get("game").toString());
 
-                            }
-
-                        }
                     }
-                });
+
+                }
+            }
+        });
     }
+
     private void getcode() {
         DocumentReference documentReference = firestore.collection("ped").document("code");
         documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot snapshot) {
-                if(snapshot.exists()){
+                if (snapshot.exists()) {
                     code2 = snapshot.getString("code");
                 }
             }

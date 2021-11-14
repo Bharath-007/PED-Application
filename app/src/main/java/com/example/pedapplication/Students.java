@@ -1,19 +1,21 @@
 package com.example.pedapplication;
 
 public class Students {
-    public Students(String name, String registerNumber, String batch, String department,String year) {
-        this.name = name;
-        this.registerNumber = registerNumber;
-        this.batch = batch;
-        this.department = department;
-        this.year = year;
-    }
+
 
     public Students() {
     }
 
-    String name,registerNumber,batch,department,year;
+    String name,rollno,batch,department,year,gender;
 
+    public Students(String name, String rollno, String batch, String department, String year, String gender) {
+        this.name = name;
+        this.rollno = rollno;
+        this.batch = batch;
+        this.department = department;
+        this.year = year;
+        this.gender = gender;
+    }
 
     public String getName() {
         return name;
@@ -23,20 +25,12 @@ public class Students {
         this.name = name;
     }
 
-    public String getYear() {
-        return year;
+    public String getRollno() {
+        return rollno;
     }
 
-    public void setYear(String year) {
-        this.year = year;
-    }
-
-    public String getRegisterNumber() {
-        return registerNumber;
-    }
-
-    public void setRegisterNumber(String registerNumber) {
-        this.registerNumber = registerNumber;
+    public void setRollno(String rollno) {
+        this.rollno = rollno;
     }
 
     public String getBatch() {
@@ -53,5 +47,21 @@ public class Students {
 
     public void setDepartment(String department) {
         this.department = department;
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 }
