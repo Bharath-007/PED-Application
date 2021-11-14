@@ -65,11 +65,7 @@ public class LoginActivity extends AppCompatActivity {
         adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,arrayList);
         game.setAdapter(adapter);
 
-        String gameName = game.getText().toString();
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        SharedPreferences.Editor editor = prefs.edit();
-        editor.putString("message", gameName); //InputString: from the EditText
-        editor.commit();
+
 
         loginbtn.setOnClickListener(new View.OnClickListener() {
 
@@ -77,6 +73,10 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String gameName = game.getText().toString();
                 String code1 = code.getText().toString();
+                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putString("message", gameName); //InputString: from the EditText
+                editor.commit();
 
                 if(gameName.isEmpty()){
                     Toast.makeText(getApplicationContext(), "Please select a game", Toast.LENGTH_SHORT).show();

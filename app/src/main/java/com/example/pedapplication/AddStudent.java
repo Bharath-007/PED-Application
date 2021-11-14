@@ -22,20 +22,21 @@ import java.util.HashMap;
 public class AddStudent extends AppCompatActivity {
 
 
-    ArrayAdapter adapter1,adapter2,adapter3,adapter4;
-    EditText studentname,rollno;
-    EditText l3,l4,l5,l6;
-    AutoCompleteTextView department,batch,year,gender;
-    Button nextbtn,finishbtn,backbtn;
+    ArrayAdapter adapter1, adapter2, adapter3, adapter4;
+    TextInputEditText studentname, rollno;
+//    TextInputLayout l3, l4, l5, l6;
+    AutoCompleteTextView department, batch, year, gender;
+    Button nextbtn, finishbtn, backbtn;
     FirebaseFirestore firestore;
-    HashMap<String,String> hm;
+    HashMap<String, String> hm;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_student);
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        String data = prefs.getString("message","no_id");
+        String data = prefs.getString("message", "no_id");
         //hooks
         studentname = findViewById(R.id.studentname);
         rollno = findViewById(R.id.rollno);
@@ -45,10 +46,10 @@ public class AddStudent extends AppCompatActivity {
         year = findViewById(R.id.year);
         gender = findViewById(R.id.gender);
 
-        l3 = findViewById(R.id.department);
-        l4 = findViewById(R.id.batch);
-        l5 = findViewById(R.id.year);
-        l6 = findViewById(R.id.gender);
+//        l3 = findViewById(R.id.department);
+//        l4 = findViewById(R.id.batch);
+//        l5 = findViewById(R.id.year);
+//        l6 = findViewById(R.id.gender);
 
         nextbtn = findViewById(R.id.nextbtn);
         finishbtn = findViewById(R.id.finishbutton);
@@ -78,26 +79,32 @@ public class AddStudent extends AppCompatActivity {
         gender.setFocusable(false);
 
         //convert edittext to String
-        String studentName = studentname.getText().toString();
-        String rollNo = rollno.getText().toString().trim();
-        String department1 = department.getText().toString();
-        String batch1 = batch.getText().toString();
-        String year1 = year.getText().toString();
-        String gender1 = gender.getText().toString();
 
-        hm.put("name",studentName);
-        hm.put("rollno",rollNo);
-        hm.put("department",department1);
-        hm.put("batch",batch1);
-        hm.put("year",year1);
+
 
         nextbtn.setOnClickListener(new View.OnClickListener() {
 
+
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),AddStudent.class));
-                DocumentReference documentReference = firestore.document("captains").collection(data).document();
+                String studentName = studentname.getText().toString();
+                String rollNo = rollno.getText().toString().trim();
+                String department1 = department.getText().toString();
+                String batch1 = batch.getText().toString();
+                String year1 = year.getText().toString();
+                String gender1 = gender.getText().toString();
+                String docname = studentName + rollNo;
+
+                hm.put("name",studentName);
+                hm.put("rollno",rollNo);
+                hm.put("department",department1);
+                hm.put("batch",batch1);
+                hm.put("year",year1);
+                hm.put("gender",gender1);
+
+                DocumentReference documentReference = firestore.collection("captains").document("Athletics").collection("Students").document(docname);
                 documentReference.set(hm);
+                startActivity(new Intent(getApplicationContext(), AddStudent.class));
 
 
             }
@@ -106,14 +113,25 @@ public class AddStudent extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                DocumentReference documentReference = firestore.document("captains").collection(data).document();
-                documentReference.set(hm);
+                String studentName = studentname.getText().toString();
+                String rollNo = rollno.getText().toString().trim();
+                String department1 = department.getText().toString();
+                String batch1 = batch.getText().toString();
+                String year1 = year.getText().toString();
+                String gender1 = gender.getText().toString();
+                String docname = studentName + rollNo;
 
+                hm.put("name",studentName);
+                hm.put("rollno",rollNo);
+                hm.put("department",department1);
+                hm.put("batch",batch1);
+                hm.put("year",year1);
+                hm.put("gender",gender1);
+                DocumentReference documentReference = firestore.collection("captains").document(data).collection("Students").document(docname);
+                documentReference.set(hm);
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
         });
-
-
 
 
     }
