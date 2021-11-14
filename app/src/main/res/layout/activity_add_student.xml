@@ -13,26 +13,27 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
-        android:layout_weight="1">
+        android:layout_weight="0.5">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.5"
+            android:layout_gravity="center"
             android:fontFamily="@font/berlinsansfbregular"
-            android:gravity="bottom|center_horizontal"
+            android:gravity="center"
             android:text="ADD STUDENTS"
             android:textColor="@color/black"
             android:textSize="35sp" />
 
     </LinearLayout>
-    <LinearLayout
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
         android:weightSum="4"
         android:gravity="center"
-        android:layout_weight="3.5">
+        android:layout_weight="4">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/l1"
@@ -50,23 +51,24 @@
             app:boxCornerRadiusTopEnd="25dp"
             app:boxCornerRadiusTopStart="0dp"
             app:boxStrokeColor="@color/black"
-            app:counterMaxLength="12"
+            app:counterMaxLength="15"
             app:hintTextColor="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/sname"
+                android:id="@+id/studentname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/person"
                 android:drawablePadding="15dp"
+                android:drawableTint="@color/black"
                 android:fontFamily="@font/poppinsregular"
-                android:inputType="text"
+                android:inputType="textPersonName"
                 android:maxLines="1"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
                 android:textColor="@color/black"
                 android:textCursorDrawable="@null"
-                android:textSize="16sp" />
+                android:textSize="12sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -93,22 +95,24 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/rollno"
                 android:layout_width="match_parent"
+                android:textAllCaps="true"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/person"
+                android:drawableStart="@drawable/rollnum"
                 android:drawablePadding="15dp"
                 android:fontFamily="@font/poppinsregular"
                 android:inputType="text"
+                android:drawableTint="@color/black"
                 android:maxLines="1"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
                 android:textColor="@color/black"
                 android:textCursorDrawable="@null"
-                android:textSize="16sp" />
+                android:textSize="12sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/l3"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginLeft="38dp"
@@ -126,25 +130,28 @@
             app:counterMaxLength="12"
             app:hintTextColor="@color/black">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <AutoCompleteTextView
                 android:id="@+id/department"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/person"
+                android:layout_height="50dp"
+                android:drawableStart="@drawable/ic_baseline_import_contacts_24"
                 android:drawablePadding="15dp"
+                android:drawableTint="@color/black"
                 android:fontFamily="@font/poppinsregular"
-                android:inputType="text"
+                android:inputType="none"
                 android:maxLines="1"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
+                android:drawableEnd="@drawable/drpdownvector"
                 android:textColor="@color/black"
                 android:textCursorDrawable="@null"
-                android:textSize="16sp" />
+                android:textSize="12sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/l4"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginLeft="38dp"
@@ -162,32 +169,34 @@
             android:layout_marginTop="20dp"
             app:hintTextColor="@color/black">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <AutoCompleteTextView
                 android:id="@+id/batch"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/person"
+                android:layout_height="50dp"
+                android:drawableStart="@drawable/calender"
                 android:drawablePadding="15dp"
+                android:drawableTint="@color/black"
                 android:fontFamily="@font/poppinsregular"
-                android:inputType="text"
+                android:inputType="none"
                 android:maxLines="1"
+                android:drawableEnd="@drawable/drpdownvector"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
                 android:textColor="@color/black"
                 android:textCursorDrawable="@null"
-                android:textSize="16sp" />
+                android:textSize="12sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/l5"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginLeft="38dp"
             android:layout_marginRight="38dp"
             android:layout_weight="0.6"
             android:fontFamily="@font/futuramediumbt"
-            android:hint="year"
+            android:hint="Year"
             android:textColorHint="@color/black"
             app:boxCornerRadiusBottomEnd="25dp"
             app:boxCornerRadiusBottomStart="25dp"
@@ -198,20 +207,60 @@
             android:layout_marginTop="20dp"
             app:hintTextColor="@color/black">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/yearbtn"
+            <AutoCompleteTextView
+                android:id="@+id/year"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/person"
+                android:layout_height="50dp"
+                android:drawableStart="@drawable/ic_baseline_calendar_view_month_24"
                 android:drawablePadding="15dp"
+                android:drawableTint="@color/black"
                 android:fontFamily="@font/poppinsregular"
-                android:inputType="text"
+                android:inputType="none"
                 android:maxLines="1"
+                android:drawableEnd="@drawable/drpdownvector"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
                 android:textColor="@color/black"
                 android:textCursorDrawable="@null"
-                android:textSize="16sp" />
+                android:textSize="12sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/l6"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="38dp"
+            android:layout_marginRight="38dp"
+            android:layout_weight="0.6"
+            android:fontFamily="@font/futuramediumbt"
+            android:hint="Gender"
+            android:textColorHint="@color/black"
+            app:boxCornerRadiusBottomEnd="25dp"
+            app:boxCornerRadiusBottomStart="25dp"
+            app:boxCornerRadiusTopEnd="25dp"
+            app:boxCornerRadiusTopStart="0dp"
+            app:boxStrokeColor="@color/black"
+            app:counterMaxLength="12"
+            android:layout_marginTop="20dp"
+            app:hintTextColor="@color/black">
+
+            <AutoCompleteTextView
+                android:id="@+id/gender"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:drawableStart="@drawable/leader"
+                android:drawablePadding="15dp"
+                android:drawableTint="@color/black"
+                android:fontFamily="@font/poppinsregular"
+                android:inputType="none"
+                android:maxLines="1"
+                android:drawableEnd="@drawable/drpdownvector"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null"
+                android:textSize="12sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -220,7 +269,7 @@
 
 
 
-    </LinearLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -259,7 +308,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="@color/blue"
                 android:fontFamily="@font/poppinsmedium"
-                android:text="Add"
+                android:text="Next"
                 android:layout_marginLeft="30dp"
                 android:textColor="@color/white"
                 android:textSize="18sp"
@@ -283,7 +332,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="right"
+                android:layout_gravity="center"
                 android:backgroundTint="@color/blue"
                 android:fontFamily="@font/poppinsmedium"
                 android:text="FInish"

@@ -28,12 +28,12 @@ public class PEDRegistration extends AppCompatActivity {
             public void onClick(View view) {
                 String code = pedcode.getText().toString().trim();
                 if(code.isEmpty()){
-                    pedcode.setError("This field should not be empty");
+                    Toast.makeText(getApplicationContext(), "This field should not be empty", Toast.LENGTH_LONG).show();
                     pedcode.requestFocus();
                     return;
                 }
                 if(!code.equals("88833")){
-                    pedcode.setError("Wrong code. Try again");
+                    Toast.makeText(getApplicationContext(), "Wrong code. Try again.", Toast.LENGTH_LONG).show();
                     pedcode.requestFocus();
                     return;
                 }

@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -37,8 +38,7 @@ public class CaptainRegistration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_captain_registration);
 
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        String data = prefs.getString("message","no_id");
+
 
 
 
@@ -77,8 +77,7 @@ public class CaptainRegistration extends AppCompatActivity {
                 }
 
                 putDetails(hm);
-                startActivity(new Intent(getApplicationContext(),GetCaptainCode.class));
-                Toast.makeText(getApplicationContext(), "Login now", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
             }
         });
 

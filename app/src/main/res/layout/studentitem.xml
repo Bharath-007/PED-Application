@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="8dp"
     app:cardCornerRadius="8dp"
@@ -11,6 +11,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
         android:layout_marginStart="16dp"
         android:layout_marginVertical="6dp"
         android:weightSum="3"
@@ -18,66 +25,74 @@
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_weight="2"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="horizontal">
+            android:layout_gravity="top"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/studentnamesingleitem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
+                android:fontFamily="@font/futuramediumbt"
                 android:text="Bharath"
-                android:textSize="22sp"
-                android:fontFamily="@font/futuramediumbt"
-                android:textColor="@color/black">
+                android:textColor="@color/black"
+                android:textSize="22sp">
 
             </TextView>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:text="-"
-
-                android:textSize="22sp"
                 android:fontFamily="@font/futuramediumbt"
-                android:textColor="@color/black">
+
+                android:text="-"
+                android:textColor="@color/black"
+                android:textSize="22sp">
 
             </TextView>
+
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/deptsingleitem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
+                android:fontFamily="@font/futuramediumbt"
                 android:text="CSE"
-                android:textSize="22sp"
-                android:fontFamily="@font/futuramediumbt"
-                android:textColor="@color/black">
+                android:textColor="@color/black"
+                android:textSize="22sp">
 
             </TextView>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
+                android:fontFamily="@font/futuramediumbt"
                 android:text="-"
-                android:textSize="22sp"
-                android:fontFamily="@font/futuramediumbt"
-                android:textColor="@color/black">
+                android:textColor="@color/black"
+                android:textSize="22sp">
 
             </TextView>
+
             <TextView
+                android:id="@+id/currentyear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/currentyear"
                 android:layout_marginStart="10dp"
-                android:text="1"
-                android:textSize="22sp"
                 android:fontFamily="@font/futuramediumbt"
-                android:textColor="@color/black">
+                android:text="I"
+                android:textColor="@color/black"
+                android:textSize="22sp">
 
             </TextView>
 
         </LinearLayout>
+
+
 
         <LinearLayout
             android:id="@+id/statusview"
@@ -85,6 +100,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
             android:layout_weight="1"
+            android:layout_gravity="center"
             android:orientation="horizontal">
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/attendancedropdown"
@@ -130,7 +146,11 @@
         </LinearLayout>
 
 
-        </LinearLayout>
+
+    </LinearLayout>
+    </LinearLayout>
+
+
 
 
 

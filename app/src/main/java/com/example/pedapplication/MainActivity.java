@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     NavigationView navigationView;
     Toolbar toolbar;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         navigationView = findViewById(R.id.nav_view);
         confirmbtn = findViewById(R.id.confirmbtn);
         addstudentbtn = findViewById(R.id.addstudentbtn);
+
 
         recyclerView = findViewById(R.id.Rview);
         recyclerView.setHasFixedSize(true);
@@ -52,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         addstudentbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity((new Intent(getApplicationContext(), AddStudent.class)));
             }
         });
 
@@ -60,8 +64,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case R.id.addstudents:
-//                Intent intent = new Intent(MainActivity.this, .class);
-//                startActivity(intent);
+                Intent intent = new Intent(MainActivity.this, AddStudent.class);
+                startActivity(intent);
                 break;
 
             case R.id.logout:

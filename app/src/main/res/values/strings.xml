@@ -46,6 +46,8 @@
         <item>IT</item>
         <item>ECE</item>
         <item>MECH</item>
+        <item>CIVIL</item>
+        <item>BME</item>
     </string-array>
     <string-array name="batch">
         <item>2017-2021</item>
@@ -72,9 +74,14 @@
         <item>2038-2042</item>
     </string-array>
     <string-array name="currentYear">
-    <item>First Year</item>
-    <item>Second Year</item>
-    <item>Third Year</item>
-    <item>Fourth Year</item>
+    <item>I</item>
+    <item>II</item>
+    <item>III</item>
+    <item>IV</item>
+    </string-array>
+
+    <string-array name="gender">
+        <item>M</item>
+        <item>F</item>
     </string-array>
 </resources>

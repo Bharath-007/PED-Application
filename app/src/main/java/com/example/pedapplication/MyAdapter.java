@@ -51,7 +51,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 //context.startActivity(intent);
                 SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(view.getContext());
                 SharedPreferences.Editor editor = prefs.edit();
-                editor.putString("message", documentname); //InputString: from the EditText
+                editor.putString("message1", documentname); //InputString: from the EditText
                 editor.commit();
                 SharedPreferences preff = PreferenceManager.getDefaultSharedPreferences(view.getContext());
                 SharedPreferences.Editor editor1 = prefs.edit();
@@ -68,7 +68,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView name,dept,currentYear;
+        TextView name,dept,currentYear,batch,gender;
         AutoCompleteTextView status;
 
         public MyViewHolder(@NonNull View itemView) {
@@ -77,6 +77,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             status = itemView.findViewById(R.id.statusview);
             dept = itemView.findViewById(R.id.deptsingleitem);
             currentYear = itemView.findViewById(R.id.currentyear);
+
+
 
         }
     }

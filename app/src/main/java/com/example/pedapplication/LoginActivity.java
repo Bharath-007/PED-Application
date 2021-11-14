@@ -5,12 +5,15 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -36,6 +39,8 @@ public class LoginActivity extends AppCompatActivity {
     ArrayList<String> arrayList;
     ArrayAdapter adapter;
     String code2;
+    TextView gotoRegister;
+
 
 
 
@@ -44,6 +49,10 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
+
+
+        gotoRegister = findViewById(R.id.gotoregister);
         firestore = FirebaseFirestore.getInstance();
         code = findViewById(R.id.logincode);
         loginbtn = findViewById(R.id.loginbtn);
@@ -52,29 +61,34 @@ public class LoginActivity extends AppCompatActivity {
 
         EventChangeListener();
         arrayList = new ArrayList<>();
+        arrayList.add("P.E.D");
         adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,arrayList);
         game.setAdapter(adapter);
 
+        String gameName = game.getText().toString();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("message", gameName); //InputString: from the EditText
+        editor.commit();
+
         loginbtn.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 String gameName = game.getText().toString();
                 String code1 = code.getText().toString();
 
                 if(gameName.isEmpty()){
-                    game.setError("Please select a game");
-                    game.requestFocus();
+                    Toast.makeText(getApplicationContext(), "Please select a game", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if(code1.isEmpty()){
-                    code.setError("This field should not be empty");
-                    code.requestFocus();
+                    Toast.makeText(getApplicationContext(), "This filed should not be empty", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if(!code1.equals(code2)){
-                    code.setError("Wrong code. Try again");
-                    code.requestFocus();
+                    Toast.makeText(getApplicationContext(), "Wrong code. Try again", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 startActivity(new Intent(getApplicationContext(),MainActivity.class));
@@ -83,7 +97,18 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
+        gotoRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),RegisterIntro.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
+
+
     private void EventChangeListener() {
         firestore
         .collection("captains").orderBy("game", Query.Direction.ASCENDING).addSnapshotListener(new EventListener<QuerySnapshot>() {
@@ -104,12 +129,7 @@ public class LoginActivity extends AppCompatActivity {
 
                             }
 
-
-
                         }
-
-
-
                     }
                 });
     }
