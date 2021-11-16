@@ -39,9 +39,6 @@ public class CaptainLogin extends AppCompatActivity {
         setContentView(R.layout.captainlogin);
 
 
-
-
-
         gamesbox = findViewById(R.id.games);
         ccode = findViewById(R.id.captaincode);
         registerbtn = findViewById(R.id.registerbtn);
