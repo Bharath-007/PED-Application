@@ -6,16 +6,15 @@
     android:background="@color/blue"
     android:elevation="4dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark"
-    app:title="Students">
+    app:title="OD List">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Students"
+        android:text="OD List"
         android:fontFamily="@font/poppinsmedium"
         android:textSize="22sp"
         android:textColor="@color/white"/>
-
 
 
 </androidx.appcompat.widget.Toolbar>

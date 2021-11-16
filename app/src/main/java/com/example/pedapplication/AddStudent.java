@@ -57,7 +57,6 @@ public class AddStudent extends AppCompatActivity {
 //        l5 = findViewById(R.id.year);
 //        l6 = findViewById(R.id.gender);
 
-        String todaysDate = date.getDate() + "." + date.getMonth() + "." + date.getYear();
         System.out.println();
 
 
@@ -98,7 +97,7 @@ public class AddStudent extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String studentName = studentname.getText().toString();
-                String rollNo = rollno.getText().toString().trim();
+                String rollNo = rollno.getText().toString().toUpperCase().trim();
                 String department1 = department.getText().toString();
                 String batch1 = batch.getText().toString();
                 String year1 = year.getText().toString();

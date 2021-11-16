@@ -66,7 +66,7 @@
             android:layout_margin="8dp"
             android:fontFamily="@font/futuramediumbt"
             android:background="@drawable/btnshape"
-            app:backgroundTint="@color/black">
+            app:backgroundTint="@color/blue">
 
         </com.google.android.material.button.MaterialButton>
         <com.google.android.material.button.MaterialButton
@@ -78,7 +78,7 @@
             android:text="Add students"
             android:fontFamily="@font/futuramediumbt"
             android:background="@drawable/btnshape"
-            app:backgroundTint="@color/black">
+            app:backgroundTint="@color/blue">
 
         </com.google.android.material.button.MaterialButton>
 

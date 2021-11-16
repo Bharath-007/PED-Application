@@ -31,9 +31,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
     Context context;
     ArrayList<Students> studentsArrayList, absentees, odList, restList, presentList;
     String getDetail;
-    FirebaseFirestore firestore;
-    ArrayAdapter<String> adapter;
-    ArrayList<Students> positions1;
     AbsenteesListener absenteesListener;
     PresentListener presentListener;
     RestListener restListener;
@@ -67,7 +64,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
         absentees = new ArrayList<>();
         odList = new ArrayList<>();
         restList = new ArrayList<>();
-        positions1 = new ArrayList<>();
+
         presentList = new ArrayList<>();
 
         Students students = studentsArrayList.get(position);
@@ -161,11 +158,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
 
         TextView name, dept, currentYear, gender, rollno;
         Spinner status;
-        FirebaseFirestore firestore;
+
         ArrayAdapter<CharSequence> adapter;
         HashMap<String, String> hm;
-        Button confirmbtn;
-        String getDetail;
+
+
 
 
         public MyViewHolder(@NonNull View itemView) {
@@ -179,7 +176,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
             gender = itemView.findViewById(R.id.genderitem);
             rollno = itemView.findViewById(R.id.rollnoitem);
 
-            firestore = FirebaseFirestore.getInstance();
 
             adapter = ArrayAdapter.createFromResource(itemView.getContext(), R.array.status, android.R.layout.simple_spinner_item);
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

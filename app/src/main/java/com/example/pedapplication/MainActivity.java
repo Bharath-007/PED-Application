@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity implements AbsenteesListener
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         absenteesList = new ArrayList<>();
 
+        //passing interface references
         myAdapter = new MyAdapter(MainActivity.this, arrayList,this,this,this,this);
         recyclerView.setAdapter(myAdapter);
 
@@ -143,13 +144,7 @@ public class MainActivity extends AppCompatActivity implements AbsenteesListener
                     DocumentReference documentReference = firestore.collection("captains").document(data).collection("Attendance").document(get_date2).collection("RestList").document(hm.get("name") + " " + hm.get("rollno"));
                     documentReference.set(hm);
                 }
-
-                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                String data = prefs.getString("message", "no_id");
-
-
-//                    DocumentReference documentReference = firestore.collection("captains").document(data).collection("Students").document(students.name + " " + students.rollno);
-//                    documentReference.set(hm);
+               startActivity(new Intent(getApplicationContext(),DetailsStroredSuccessfully.class));
             }
         });
 

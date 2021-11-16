@@ -10,35 +10,53 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PEDApplication.NoActionAndStatusBar">
         <activity
+            android:name=".DetailsStroredSuccessfully"
+            android:exported="true"
+            android:screenOrientation="locked"/>
+        <activity
+            android:name=".PEDSelectGameActivity"
+            android:exported="true"
+            android:screenOrientation="locked"/>
+        <activity
             android:name=".Captain_Calendar"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="locked"/>
         <activity
             android:name=".PEDlogin"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="locked"/>
         <activity
             android:name=".PedCalender"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="locked"/>
         <activity
             android:name=".AddStudent"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="locked"/>
         <activity
             android:name=".CaptainRegistration"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="locked"/>
         <activity
             android:name=".PEDRegistration"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="locked"/>
         <activity
             android:name=".GetCaptainCode"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="locked"/>
         <activity
             android:name=".CaptainLogin"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="locked"/>
         <activity
             android:name=".RegisterIntro"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="locked"/>
         <activity
             android:name=".SplashScreen"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="locked">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -47,7 +65,8 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="locked"/>
     </application>
 
 </manifest>
