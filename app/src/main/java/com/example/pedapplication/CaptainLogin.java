@@ -4,7 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -18,9 +21,11 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.concurrent.Future;
 
-public class CaptainRegistration extends AppCompatActivity {
+public class CaptainLogin extends AppCompatActivity {
 
     String code;
     ArrayAdapter adapter;
@@ -31,7 +36,7 @@ public class CaptainRegistration extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_captain_registration);
+        setContentView(R.layout.captainlogin);
 
 
 
@@ -50,29 +55,33 @@ public class CaptainRegistration extends AppCompatActivity {
         registerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 String game = gamesbox.getText().toString();
                 String code1 = ccode.getText().toString();
+                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                SharedPreferences.Editor editor = prefs.edit();
+
+                editor.putString("message", game); //InputString: from the EditText
+                editor.commit();
                 HashMap<String,String> hm = new HashMap<>();
                 hm.put("game",game);
+                
                 if(game.isEmpty()){
-                    gamesbox.setError("Please select a game");
-                    gamesbox.requestFocus();
+                    Toast.makeText(getApplicationContext(), "Select a game to proceed", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if(code1.isEmpty()){
-                    ccode.setError("This field should not be empty");
-                    ccode.requestFocus();
+                    Toast.makeText(getApplicationContext(), "Enter your code to proceed", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if(!code1.equals(code)){
-                    ccode.setError("Wrong code. Try again");
-                    ccode.requestFocus();
+                    Toast.makeText(getApplicationContext(), "Wrong code, try again.", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 putDetails(hm);
-                startActivity(new Intent(getApplicationContext(), CaptainLogin.class));
+                startActivity(new Intent(getApplicationContext(), Captain_Calendar.class));
             }
         });
 

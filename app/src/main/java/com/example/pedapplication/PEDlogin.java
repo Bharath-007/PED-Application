@@ -19,7 +19,6 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -31,7 +30,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
-public class LoginActivity extends AppCompatActivity {
+public class PEDlogin extends AppCompatActivity {
     Button loginbtn;
     FirebaseFirestore firestore;
     AutoCompleteTextView game;
@@ -45,21 +44,22 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_pedlogin);
 
 
-        gotoRegister = findViewById(R.id.gotoregister);
+        gotoRegister = findViewById(R.id.regiterbtn2);
         firestore = FirebaseFirestore.getInstance();
-        code = findViewById(R.id.logincode);
-        loginbtn = findViewById(R.id.loginbtn);
-        game = findViewById(R.id.gameslogin);
+        code = findViewById(R.id.pedcode);
+        loginbtn = findViewById(R.id.pedLoginBtn);
+        game = findViewById(R.id.staffID);
         getcode();
 
-        EventChangeListener();
-        arrayList = new ArrayList<>();
-        arrayList.add("P.E.D");
-        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, arrayList);
-        game.setAdapter(adapter);
+//        EventChangeListener();
+//        arrayList = new ArrayList<>();
+//        arrayList.add("P.E.D");
+//
+//        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, arrayList);
+//        game.setAdapter(adapter);
 
 
         loginbtn.setOnClickListener(new View.OnClickListener() {
@@ -98,7 +98,7 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Wrong code. Try again", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), PedCalender.class));
 
             }
         });
@@ -107,7 +107,7 @@ public class LoginActivity extends AppCompatActivity {
         gotoRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), RegisterIntro.class);
+                Intent intent = new Intent(getApplicationContext(), PEDRegistration.class);
                 startActivity(intent);
             }
         });
@@ -132,7 +132,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     if (dc.getType() == DocumentChange.Type.ADDED) {
 
-                        arrayList.add(dc.getDocument().get("game").toString());
+                        //arrayList.add(dc.getDocument().get("game").toString());
 
                     }
 

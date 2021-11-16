@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PEDApplication.NoActionAndStatusBar">
         <activity
+            android:name=".Captain_Calendar"
+            android:exported="true" />
+        <activity
+            android:name=".PEDlogin"
+            android:exported="true" />
+        <activity
             android:name=".PedCalender"
             android:exported="true" />
         <activity
@@ -25,8 +31,8 @@
             android:name=".GetCaptainCode"
             android:exported="true" />
         <activity
-            android:name=".LoginActivity"
-            android:exported="true"></activity>
+            android:name=".CaptainLogin"
+            android:exported="true" />
         <activity
             android:name=".RegisterIntro"
             android:exported="true" />

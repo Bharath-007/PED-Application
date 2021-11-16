@@ -21,7 +21,7 @@ public class RegisterIntro extends AppCompatActivity {
         captainbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),CaptainRegistration.class);
+                Intent intent = new Intent(getApplicationContext(), CaptainLogin.class);
                 startActivity(intent);
             }
         });
@@ -29,7 +29,7 @@ public class RegisterIntro extends AppCompatActivity {
         pedbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),PEDRegistration.class));
+                startActivity(new Intent(getApplicationContext(),PEDlogin.class));
             }
         });
     }

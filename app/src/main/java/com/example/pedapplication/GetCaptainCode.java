@@ -4,9 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -63,7 +61,7 @@ public class GetCaptainCode extends AppCompatActivity {
 //                SharedPreferences.Editor editor = prefs.edit();
 //                editor.putString("message", code); //InputString: from the EditText
 //                editor.commit();
-                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                startActivity(new Intent(getApplicationContext(), PEDlogin.class));
                 Toast.makeText(getApplicationContext(), "Login now", Toast.LENGTH_SHORT).show();
             }
         }).addOnFailureListener(new OnFailureListener() {

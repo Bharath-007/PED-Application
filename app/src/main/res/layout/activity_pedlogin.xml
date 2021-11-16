@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CaptainLogin"
+    android:weightSum="6"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.5"
+        android:background="@drawable/bg1"
+        android:orientation="vertical">
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3.2"
+        android:weightSum="4"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:text="PED Staff Login"
+            android:textColor="@color/black"
+            android:fontFamily="@font/futuramediumbt"
+            android:layout_marginBottom="20dp"
+            android:textSize="30sp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ed14"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="48dp"
+            android:layout_weight=".8"
+            android:enabled="true"
+            android:hint="Select game"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:endIconDrawable="@drawable/drpdownvector"
+            app:endIconMode="dropdown_menu"
+            app:hintTextColor="@color/black"
+            app:endIconTint="@color/black">
+
+            <AutoCompleteTextView
+                android:id="@+id/staffID"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:completionThreshold="1"
+                android:inputType="none"
+                android:clickable="false"
+                android:drawableStart="@drawable/leader"
+                android:drawableTint="@color/black"
+                android:text="P.E.D"
+                android:drawablePadding="10dp"
+                android:maxLines="1"
+                android:paddingStart="20dp"
+                android:paddingEnd="40dp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cursorSelect"
+                android:textCursorDrawable="@null"
+                android:textSize="14sp">
+
+            </AutoCompleteTextView>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ed1"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="48dp"
+            app:passwordToggleEnabled="true"
+            android:layout_weight=".8"
+            android:enabled="true"
+            android:hint="Enter code"
+            app:passwordToggleTint="@color/black"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/black"
+            app:hintTextColor="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pedcode"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawableStart="@drawable/login_password_icon"
+                android:drawableTint="@color/black"
+                android:drawablePadding="10dp"
+                android:maxLines="1"
+                android:paddingStart="20dp"
+                android:paddingEnd="40dp"
+                android:maxLength="5"
+                android:inputType="numberPassword"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cursorSelect"
+                android:textCursorDrawable="@null"
+                android:textSize="14sp">
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/pedLoginBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="40dp"
+            android:layout_weight="0.7"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:background="@drawable/btnshape"
+            app:backgroundTint="@color/blue"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="Login"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.3">
+        <TextView
+            android:id="@+id/regiterbtn2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/new_user_register"
+            android:textSize="18sp"
+            android:gravity="center|bottom"
+            android:clickable="true"
+            android:fontFamily="@font/poppinsregular"
+            android:paddingBottom="7dp"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

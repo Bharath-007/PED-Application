@@ -3,33 +3,28 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="90dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardElevation="8dp"
+    app:cardElevation="5dp"
     app:cardCornerRadius="8dp"
-    android:layout_margin="10dp">
+    android:layout_margin="5dp">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:weightSum="2"
-        android:orientation="horizontal">
-
-
+        android:layout_height="match_parent"
+        android:weightSum="3"
+        android:orientation="horizontal"
+        >
         <LinearLayout
-            android:layout_width="253dp"
-            android:layout_height="100dp"
-            android:layout_marginStart="2dp"
-            android:orientation="vertical"
-            android:weightSum="3">
-
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.95"
+            android:weightSum="3"
+            android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top"
-                android:layout_weight="2"
-                android:orientation="horizontal"
-                android:padding="10dp">
-
+                android:layout_height="0dp"
+                android:gravity="start|center_vertical"
+                android:layout_weight="1.5">
                 <TextView
                     android:id="@+id/studentnamesingleitem"
                     android:layout_width="wrap_content"
@@ -49,7 +44,7 @@
                     android:fontFamily="@font/futuramediumbt"
                     android:text="-"
                     android:textColor="@color/black"
-                    android:textSize="22sp">
+                    android:textSize="20sp">
 
                 </TextView>
 
@@ -72,7 +67,7 @@
                     android:fontFamily="@font/futuramediumbt"
                     android:text="-"
                     android:textColor="@color/black"
-                    android:textSize="22sp">
+                    android:textSize="20sp">
 
                 </TextView>
 
@@ -88,17 +83,14 @@
 
                 </TextView>
 
+
             </LinearLayout>
-
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginBottom="8dp"
-                android:layout_weight="2"
-                android:orientation="horizontal">
-
+                android:layout_height="0dp"
+                android:layout_weight="1.5"
+                android:paddingStart="8dp"
+                android:gravity="start|center_vertical">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -116,7 +108,7 @@
                     android:fontFamily="@font/futuramediumbt"
                     android:text="-"
                     android:textColor="@color/black"
-                    android:textSize="18sp">
+                    android:textSize="20sp">
 
                 </TextView>
 
@@ -128,7 +120,7 @@
                     android:fontFamily="@font/futuramediumbt"
                     android:text="M"
                     android:textColor="@color/black"
-                    android:textSize="22sp">
+                    android:textSize="18sp">
 
                 </TextView>
 
@@ -139,7 +131,7 @@
                     android:fontFamily="@font/futuramediumbt"
                     android:text="-"
                     android:textColor="@color/black"
-                    android:textSize="22sp">
+                    android:textSize="20sp">
 
                 </TextView>
 
@@ -153,60 +145,31 @@
                     android:textSize="18sp">
 
                 </TextView>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="2dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
 
             </LinearLayout>
-
-
         </LinearLayout>
-
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_weight="1.1"
+            android:layout_margin="0dp"
+            android:gravity="center">
+            <Spinner
+                android:id="@+id/statusview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:completionThreshold="1"
+                android:maxLines="1"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cursorSelect"
+                android:textCursorDrawable="@null"
+                android:clickable="true"
+                android:textSize="10sp">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/attendancedropdown"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="132dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:enabled="true"
-                android:gravity="center"
-                android:hint="Select"
-                android:textColorHint="@color/black"
-                app:boxStrokeColor="@color/black"
-                app:endIconTint="@color/black"
-                app:hintTextColor="@color/black">
-
-                <Spinner
-                    android:id="@+id/statusview"
-                    android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:layout_weight="3"
-                    android:completionThreshold="1"
-                    android:inputType="none"
-                    android:maxLines="1"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="40dp"
-                    android:textColor="@color/black"
-                    android:textColorHighlight="@color/cursorSelect"
-                    android:textCursorDrawable="@null"
-                    android:textSize="14sp">
-
-                </Spinner>
-            </com.google.android.material.textfield.TextInputLayout>
+            </Spinner>
         </LinearLayout>
-
     </LinearLayout>
 
 

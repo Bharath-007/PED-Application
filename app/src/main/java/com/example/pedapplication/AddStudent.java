@@ -17,9 +17,14 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 
 public class AddStudent extends AppCompatActivity {
+
+    Date date;
 
 
     ArrayAdapter adapter1, adapter2, adapter3, adapter4;
@@ -34,6 +39,7 @@ public class AddStudent extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_student);
+
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         String data = prefs.getString("message", "no_id");
@@ -50,6 +56,10 @@ public class AddStudent extends AppCompatActivity {
 //        l4 = findViewById(R.id.batch);
 //        l5 = findViewById(R.id.year);
 //        l6 = findViewById(R.id.gender);
+
+        String todaysDate = date.getDate() + "." + date.getMonth() + "." + date.getYear();
+        System.out.println();
+
 
         nextbtn = findViewById(R.id.nextbtn);
         finishbtn = findViewById(R.id.finishbutton);
@@ -102,7 +112,7 @@ public class AddStudent extends AppCompatActivity {
                 hm.put("year",year1);
                 hm.put("gender",gender1);
 
-                DocumentReference documentReference = firestore.collection("captains").document("Athletics").collection("Students").document(docname);
+                DocumentReference documentReference = firestore.collection("captains").document(data).collection("Students").document(docname);
                 documentReference.set(hm);
                 startActivity(new Intent(getApplicationContext(), AddStudent.class));
 

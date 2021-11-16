@@ -4,13 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:weightSum="6"
+    android:orientation="vertical"
+    android:gravity="center"
     tools:context=".SplashScreen">
 
+    <TextView
+        android:id="@+id/drngpit"
+        android:textSize="30sp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fontFamily="@font/poppinsbold"
+        android:textColor="@color/blue"
+        android:gravity="center|bottom"
+        android:layout_weight="1.5"
+        android:text="Dr.N.G.P. INSTITUTE OF TECHNOLOGY"
+        />
+    <TextView
+        android:id="@+id/ped"
+        android:textSize="26sp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:textColor="@color/blue"
+        android:gravity="center"
+        android:fontFamily="@font/poppinsbold"
+        android:text="Physical Education Department"
+        />
     <ImageView
         android:id="@+id/logo"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="3"
         android:src="@drawable/logo"
-        android:layout_margin="50dp"/>
+        android:layout_marginBottom="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"/>
+
+
+
 
 </LinearLayout>

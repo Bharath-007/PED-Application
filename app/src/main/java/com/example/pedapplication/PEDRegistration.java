@@ -43,4 +43,10 @@ public class PEDRegistration extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(getApplicationContext(),GetCaptainCode.class));
+    }
 }

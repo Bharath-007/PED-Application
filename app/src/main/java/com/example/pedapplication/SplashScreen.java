@@ -26,7 +26,7 @@ public class SplashScreen extends AppCompatActivity {
         logo = findViewById(R.id.logo);
         logo.setAnimation(top_animation);
         new Handler().postDelayed(() -> {
-            Intent intent= new Intent(SplashScreen.this, LoginActivity.class);
+            Intent intent= new Intent(SplashScreen.this, RegisterIntro.class);
 //                startActivity(intent);
             startActivity(intent,
                     ActivityOptions.makeSceneTransitionAnimation(SplashScreen.this).toBundle());

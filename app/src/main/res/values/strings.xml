@@ -39,6 +39,8 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="new_user_register">New Staff? <b>PED Register</b></string>
+
 
     <string-array name="departmentnames">
         <item>CSE</item>
@@ -78,6 +80,12 @@
         <item>II</item>
         <item>III</item>
         <item>IV</item>
+    </string-array>
+    <string-array name="status">
+        <item>Present</item>
+        <item>Absent</item>
+        <item>OD</item>
+        <item>Rest</item>
     </string-array>
 
     <string-array name="gender">
