@@ -81,6 +81,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
 
 //        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 //        holder.status.setAdapter(adapter);
+//        for()
+//        if (getDetail.equalsIgnoreCase("present")) {
+//            presentList.add(studentsArrayList.get(position));
+//        } else {
+//            presentList.remove(studentsArrayList.get(position));
+//        }
+//        presentListener.onPresentQuantityChange(presentList);
+
+
+        System.out.println(holder.status.getSelectedItem().toString());
 
         holder.status.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -88,6 +98,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
                 holder.status.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
                         getDetail = holder.status.getItemAtPosition(i).toString();
                         if (getDetail.equalsIgnoreCase("present")) {
                             presentList.add(studentsArrayList.get(position));

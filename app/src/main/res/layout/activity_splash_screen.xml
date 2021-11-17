@@ -1,47 +1,56 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="6"
+    android:layout_margin="10dp"
     android:orientation="vertical"
-    android:gravity="center"
+    android:weightSum="6"
     tools:context=".SplashScreen">
 
     <TextView
         android:id="@+id/drngpit"
-        android:textSize="30sp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:fontFamily="@font/poppinsbold"
-        android:textColor="@color/blue"
+        android:layout_weight="1"
+        android:fontFamily="@font/berlinsansfbregular"
         android:gravity="center|bottom"
-        android:layout_weight="1.5"
+        android:letterSpacing="0.02"
         android:text="Dr.N.G.P. INSTITUTE OF TECHNOLOGY"
-        />
+        android:textColor="@color/blue2"
+        android:textSize="30sp" />
+
     <TextView
         android:id="@+id/ped"
-        android:textSize="26sp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.5"
-        android:textColor="@color/blue"
+        android:layout_weight="1"
+        android:fontFamily="@font/poppinsmedium"
         android:gravity="center"
-        android:fontFamily="@font/poppinsbold"
         android:text="Physical Education Department"
-        />
+        android:textAllCaps="false"
+        android:textColor="@color/blue2"
+        android:textSize="26sp" />
+
     <ImageView
         android:id="@+id/logo"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3"
-        android:src="@drawable/logo"
-        android:layout_marginBottom="60dp"
         android:layout_marginLeft="60dp"
-        android:layout_marginRight="60dp"/>
+        android:layout_marginRight="60dp"
+        android:layout_marginBottom="60dp"
+        android:layout_weight="3"
+        android:src="@drawable/logo" />
 
-
-
-
+    <TextView
+        android:id="@+id/sp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fontFamily="@font/poppinsmedium"
+        android:gravity="center_horizontal"
+        android:text="Sports Students Attendence"
+        android:textAllCaps="false"
+        android:textColor="@color/blue"
+        android:textSize="26sp"></TextView>
 </LinearLayout>
