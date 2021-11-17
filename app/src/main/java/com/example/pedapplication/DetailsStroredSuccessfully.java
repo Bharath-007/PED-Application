@@ -21,7 +21,7 @@ public class DetailsStroredSuccessfully extends AppCompatActivity {
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),CaptainLogin.class));
+                startActivity(new Intent(getApplicationContext(),RegisterIntro.class));
             }
         });
     }

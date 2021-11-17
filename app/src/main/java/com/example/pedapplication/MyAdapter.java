@@ -79,15 +79,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
 
         holder.rollno.setText(students.rollno);
 
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        holder.status.setAdapter(adapter);
-//        for()
-//        if (getDetail.equalsIgnoreCase("present")) {
-//            presentList.add(studentsArrayList.get(position));
-//        } else {
-//            presentList.remove(studentsArrayList.get(position));
-//        }
-//        presentListener.onPresentQuantityChange(presentList);
+
+        for(int i=0;i<studentsArrayList.size();i++){
+            if (getDetail.equalsIgnoreCase("present")) {
+                presentList.add(studentsArrayList.get(i));
+            } else {
+                presentList.remove(studentsArrayList.get(i));
+            }
+            presentListener.onPresentQuantityChange(presentList);
+        }
+
 
 
         System.out.println(holder.status.getSelectedItem().toString());
