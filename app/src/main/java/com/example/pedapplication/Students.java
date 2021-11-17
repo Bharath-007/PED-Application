@@ -6,7 +6,7 @@ public class Students {
     public Students() {
     }
 
-    String name,rollno,batch,department,year,gender;
+    String name,rollno,batch,department,year,gender,status;
 
     public Students(String name, String rollno, String batch, String department, String year, String gender) {
         this.name = name;
@@ -15,6 +15,24 @@ public class Students {
         this.department = department;
         this.year = year;
         this.gender = gender;
+    }
+
+    public Students(String name, String rollno, String batch, String department, String year, String gender, String status) {
+        this.name = name;
+        this.rollno = rollno;
+        this.batch = batch;
+        this.department = department;
+        this.year = year;
+        this.gender = gender;
+        this.status = status;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getName() {

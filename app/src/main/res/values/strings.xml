@@ -1,21 +1,36 @@
 <resources>
     <string name="app_name">PED Application</string>
     <string-array name="games">
-        <item>Athletics</item>
-        <item>Badminton</item>
-        <item>Ball Badminton</item>
-        <item>Basketball</item>
-        <item>Carrom</item>
-        <item>Chess</item>
-        <item>Cricket</item>
-        <item>Football</item>
-        <item>Hockey</item>
-        <item>Kabaddi</item>
-        <item>Kho Kho</item>
-        <item>Martial Arts</item>
-        <item>Throwball</item>
-        <item>Table Tennis</item>
-        <item>VolleyBall</item>
+        <item>Athletics(Men)</item>
+        <item>Athletics(Women)</item>
+        <item>Badminton(Men)</item>
+        <item>Badminton(Women)</item>
+        <item>Ball Badminton(Men)</item>
+        <item>Ball Badminton(Women)</item>
+        <item>Basketball(Men)</item>
+        <item>Basketball(Women)</item>
+        <item>Carrom(Men)</item>
+        <item>Carrom(Women)</item>
+        <item>Chess(Men)</item>
+        <item>Chess(Women)</item>
+        <item>Cricket(Men)</item>
+        <item>Cricket(Women)</item>
+        <item>Football(Men)</item>
+        <item>Football(Women)</item>
+        <item>Hockey(Men)</item>
+        <item>Hockey(Women)</item>
+        <item>Kabaddi(Men)</item>
+        <item>Kabaddi(Women)</item>
+        <item>Kho Kho(Men)</item>
+        <item>Kho Kho(Women)</item>
+        <item>Martial Arts(Men)</item>
+        <item>Martial Arts(Women)</item>
+        <item>Throwball(Men)</item>
+        <item>Throwball(Women)</item>
+        <item>Table Tennis(Men)</item>
+        <item>Table Tennis(Women)</item>
+        <item>VolleyBall(Men)</item>
+        <item>VolleyBall(Women)</item>
 
     </string-array>
 
@@ -50,6 +65,9 @@
         <item>MECH</item>
         <item>CIVIL</item>
         <item>BME</item>
+        <item>AI and DS</item>
+        <item>BME</item>
+        <item>MBA</item>
     </string-array>
     <string-array name="batch">
         <item>2017-2021</item>

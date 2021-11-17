@@ -45,6 +45,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
         this.odListener = odListener;
         this.restListener = restListener;
     }
+    public MyAdapter(Context context, ArrayList<Students> studentsArrayList) {
+        this.context = context;
+        this.studentsArrayList = studentsArrayList;
+    }
 
     @NonNull
     @Override
@@ -81,44 +85,41 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
         holder.status.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                getDetail = holder.status.getItemAtPosition(i).toString();
+                holder.status.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                        getDetail = holder.status.getItemAtPosition(i).toString();
+                        if (getDetail.equalsIgnoreCase("present")) {
+                            presentList.add(studentsArrayList.get(position));
+                        } else {
+                            presentList.remove(studentsArrayList.get(position));
+                        }
+                        presentListener.onPresentQuantityChange(presentList);
+                        if (getDetail.equalsIgnoreCase("absent")) {
+                            absentees.add(studentsArrayList.get(position));
+                        } else {
+                            absentees.remove(studentsArrayList.get(position));
+                        }
+                        absenteesListener.onAbsenteesQuantityChange(absentees);
+                        if (getDetail.equalsIgnoreCase("od")) {
+                            odList.add(studentsArrayList.get(position));
+                        } else {
+                            odList.remove(studentsArrayList.get(position));
+                        }
+                        odListener.onODQuantityChange(odList);
+                        if (getDetail.equalsIgnoreCase("rest")) {
+                            restList.add(studentsArrayList.get(position));
+                        } else {
+                            restList.remove(studentsArrayList.get(position));
+                        }
+                        restListener.onRestQuantityChange(restList);
+                    }
+                    @Override
+                    public void onNothingSelected(AdapterView<?> adapterView) {
+                    }
+                });
 
-                if (getDetail.equalsIgnoreCase("present")) {
-                    presentList.add(studentsArrayList.get(position));
-
-                } else {
-                    presentList.remove(studentsArrayList.get(position));
-
-                }
-                presentListener.onPresentQuantityChange(presentList);
-
-
-                if (getDetail.equalsIgnoreCase("absent")) {
-                    absentees.add(studentsArrayList.get(position));
-
-                } else {
-                    absentees.remove(studentsArrayList.get(position));
-
-                }
-                absenteesListener.onAbsenteesQuantityChange(absentees);
-
-
-                if (getDetail.equalsIgnoreCase("od")) {
-                    odList.add(studentsArrayList.get(position));
-                } else {
-                    odList.remove(studentsArrayList.get(position));
-                }
-                odListener.onODQuantityChange(odList);
-
-                if (getDetail.equalsIgnoreCase("rest")) {
-                    restList.add(studentsArrayList.get(position));
-
-                } else {
-                    restList.remove(studentsArrayList.get(position));
-                }
-                restListener.onRestQuantityChange(restList);
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 

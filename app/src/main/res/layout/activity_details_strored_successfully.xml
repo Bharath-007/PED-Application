@@ -50,7 +50,7 @@
         android:layout_weight=".5"
         android:weightSum="0.4">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/lastbackbtn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -59,7 +59,9 @@
             android:layout_marginRight="20dp"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="25dp"
-            android:background="@color/blue"
+            android:background="@drawable/btnshape"
+            android:drawableTint="@color/blue"
+            app:backgroundTint="@color/blue"
             android:fontFamily="@font/berlinsansfbregular"
             android:gravity="center"
             android:text="Back"
@@ -67,7 +69,7 @@
             android:textSize="25sp"
             >
 
-        </Button>
+        </com.google.android.material.button.MaterialButton>
 
     </LinearLayout>
 

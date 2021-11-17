@@ -46,8 +46,8 @@ public class PEDSelectGameActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        arrayList = new ArrayList<>();
 
+        arrayList = new ArrayList<>();
 
         EventChangeListener();
         myAdapter = new PedAdapter(PEDSelectGameActivity.this, arrayList);

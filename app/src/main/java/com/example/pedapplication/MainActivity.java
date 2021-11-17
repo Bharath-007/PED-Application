@@ -56,6 +56,9 @@ public class MainActivity extends AppCompatActivity implements AbsenteesListener
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         String data = prefs.getString("message", "no_id");
 
+        System.out.println(get_date2);
+        System.out.println(data);
+
         drawerLayout = findViewById(R.id.drawer_layout);
         toolbar = findViewById(R.id.toolbar);
         navigationView = findViewById(R.id.nav_view);

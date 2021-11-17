@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -104,6 +105,32 @@ public class AddStudent extends AppCompatActivity {
                 String gender1 = gender.getText().toString();
                 String docname = studentName + rollNo;
 
+                if(studentName.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "Fields should not be empty", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                String noWhiteSpace = "[a-zA-Z][a-zA-Z ]*";
+                if (!studentName.matches(noWhiteSpace)) {
+                    Toast.makeText(getApplicationContext(), "Student name must contain 3 to 20 characters without any Special Characters", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if(rollNo.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "Fields should not be empty", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(department1.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "Fields not be empty", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(batch1.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "Fields should not be empty", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(gender1.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "Fields should not be empty", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 hm.put("name",studentName);
                 hm.put("rollno",rollNo);
                 hm.put("department",department1);
@@ -129,6 +156,32 @@ public class AddStudent extends AppCompatActivity {
                 String year1 = year.getText().toString();
                 String gender1 = gender.getText().toString();
                 String docname = studentName + " " +  rollNo;
+
+                if(studentName.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "Fields should not be empty", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                String noWhiteSpace = "[a-zA-Z][a-zA-Z ]*";
+                if (!studentName.matches(noWhiteSpace)) {
+                    Toast.makeText(getApplicationContext(), "Student name must contain 3 to 20 characters without any Special Characters", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if(rollNo.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "Fields should not be empty", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(department1.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "Fields not be empty", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(batch1.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "Fields should not be empty", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(gender1.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "Fields should not be empty", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 hm.put("name",studentName);
                 hm.put("rollno",rollNo);

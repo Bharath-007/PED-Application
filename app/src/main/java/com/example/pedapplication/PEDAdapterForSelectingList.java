@@ -14,38 +14,39 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class PedAdapter extends RecyclerView.Adapter<PedAdapter.PedViewHolder> {
+class PedAdapterForSelectingList extends RecyclerView.Adapter<PedAdapterForSelectingList.PedViewHolder> {
     Context context;
-    ArrayList<GamesHelperClass> arrayList;
+    ArrayList<String> arrayList;
 
-    public PedAdapter(Context context, ArrayList<GamesHelperClass> arrayList) {
+    public PedAdapterForSelectingList(Context context, ArrayList<String> arrayList) {
         this.context = context;
         this.arrayList = arrayList;
     }
 
+
     @NonNull
     @Override
-    public PedAdapter.PedViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public PedAdapterForSelectingList.PedViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(context).inflate(R.layout.gamesitem, parent, false);
-        return new PedAdapter.PedViewHolder(v);
+        return new PedAdapterForSelectingList.PedViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PedAdapter.PedViewHolder holder, int position) {
-        GamesHelperClass gamesHelperClass = arrayList.get(position);
-        holder.gamename.setText(gamesHelperClass.game);
+    public void onBindViewHolder(@NonNull PedAdapterForSelectingList.PedViewHolder holder, int position) {
+        String gamesHelperClass = arrayList.get(position);
+        holder.gamename.setText(gamesHelperClass);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String documentname = holder.gamename.getText().toString();
-                Intent intent = new Intent(view.getContext(), SelectActivityPED.class);
+                Intent intent = new Intent(view.getContext(), PresentList.class);
+                // intent.putExtra("message", documentname);
                 context.startActivity(intent);
                 SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(view.getContext());
                 SharedPreferences.Editor editor = prefs.edit();
-                editor.putString("gamenameped", documentname); //InputString: from the EditText
+                editor.putString("listnameped", documentname); //InputString: from the EditText
                 editor.commit();
-
             }
         });
 
