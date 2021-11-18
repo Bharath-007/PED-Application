@@ -155,7 +155,7 @@ public class AddStudent extends AppCompatActivity {
                 String batch1 = batch.getText().toString();
                 String year1 = year.getText().toString();
                 String gender1 = gender.getText().toString();
-                String docname = studentName + " " +  rollNo;
+                String docname = studentName.replace(" ","") + " " +  rollNo;
 
                 if(studentName.isEmpty()){
                     Toast.makeText(getApplicationContext(), "Fields should not be empty", Toast.LENGTH_SHORT).show();
