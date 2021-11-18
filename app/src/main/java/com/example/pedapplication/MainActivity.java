@@ -30,6 +30,8 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 public class MainActivity extends AppCompatActivity implements AbsenteesListener,PresentListener,RestListener,ODListener {
     Button confirmbtn, addstudentbtn;
@@ -38,10 +40,9 @@ public class MainActivity extends AppCompatActivity implements AbsenteesListener
     NavigationView navigationView;
     Toolbar toolbar;
     FirebaseFirestore firestore;
-    ArrayList<Students> arrayList, absenteesList,odList,restList,presentList;
+    ArrayList<Students> arrayList, absenteesList,odList,restList,presentList,list;
     MyAdapter myAdapter;
     HashMap<String,String> hm;
-    HashMap<String, String> absenteesDetails,odDetails,restDetails;
 
 
     @Override
@@ -65,11 +66,11 @@ public class MainActivity extends AppCompatActivity implements AbsenteesListener
         confirmbtn = findViewById(R.id.confrimbtnmain);
         addstudentbtn = findViewById(R.id.addstudentbtn);
 
+        absenteesList = new ArrayList<>();
         hm = new HashMap<>();
 
         arrayList = new ArrayList<>();
         odList = new ArrayList<>();
-        absenteesDetails = new HashMap<>();
         restList = new ArrayList<>();
         presentList = new ArrayList<>();
 
@@ -83,6 +84,8 @@ public class MainActivity extends AppCompatActivity implements AbsenteesListener
         //passing interface references
         myAdapter = new MyAdapter(MainActivity.this, arrayList,this,this,this,this);
         recyclerView.setAdapter(myAdapter);
+
+        list = new ArrayList<>();
 
         EventChangeListener();
         System.out.println(arrayList);
@@ -106,6 +109,7 @@ public class MainActivity extends AppCompatActivity implements AbsenteesListener
         confirmbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
 
                 for(Students present: presentList){
                     hm.put("status","Present");
@@ -147,6 +151,15 @@ public class MainActivity extends AppCompatActivity implements AbsenteesListener
                     DocumentReference documentReference = firestore.collection("captains").document(data).collection("Attendance").document(get_date2).collection("RestList").document(hm.get("name") + " " + hm.get("rollno"));
                     documentReference.set(hm);
                 }
+                list.addAll(presentList);
+                list.addAll(absenteesList);
+                list.addAll(odList);
+                list.addAll(restList);
+                for(Students s:list){
+                    System.out.println(s.name);
+                    System.out.println(s.status);
+                }
+                System.out.println();
                startActivity(new Intent(getApplicationContext(),DetailsStroredSuccessfully.class));
             }
         });
@@ -219,14 +232,17 @@ public class MainActivity extends AppCompatActivity implements AbsenteesListener
 
     }
 
+
     @Override
     public void onAbsenteesQuantityChange(ArrayList<Students> arrayList) {
-        absenteesDetails.clear();
+
         absenteesList.clear();
         absenteesList.addAll(arrayList);
+
         for (Students s : arrayList) {
             System.out.println(s.name + " Absent");
-            absenteesDetails.put(s.name, s.rollno);
+
+
 
 
         }
@@ -238,6 +254,7 @@ public class MainActivity extends AppCompatActivity implements AbsenteesListener
         odList.clear();
         odList.addAll(arrayList);
         for (Students s : odList) {
+
             System.out.println(s.name + " OD");
         }
 
@@ -248,6 +265,7 @@ public class MainActivity extends AppCompatActivity implements AbsenteesListener
         presentList.clear();
         presentList.addAll(arrayList);
         for (Students s : presentList) {
+
             System.out.println(s.name + " Present");
         }
 
@@ -258,6 +276,7 @@ public class MainActivity extends AppCompatActivity implements AbsenteesListener
         restList.clear();
         restList.addAll(arrayList);
             for (Students s : restList) {
+
                 System.out.println(s.name + " Rest");
             }
 
