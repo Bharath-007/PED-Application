@@ -1,6 +1,7 @@
 package com.example.pedapplication;
 
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements AbsenteesListener
     FirebaseFirestore firestore;
     ArrayList<Students> arrayList, absenteesList,odList,restList,presentList,list;
     MyAdapter myAdapter;
+    ProgressDialog progressDialog;
     HashMap<String,String> hm;
 
 
@@ -61,6 +63,11 @@ public class MainActivity extends AppCompatActivity implements AbsenteesListener
 
         System.out.println(get_date2);
         System.out.println(data);
+
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage("Please wait...");
+        progressDialog.show();
 
 
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -158,11 +165,8 @@ public class MainActivity extends AppCompatActivity implements AbsenteesListener
                 list.addAll(absenteesList);
                 list.addAll(odList);
                 list.addAll(restList);
-                for(Students s:list){
-                    System.out.println(s.name);
-                    System.out.println(s.status);
-                }
-                System.out.println();
+
+                
                startActivity(new Intent(getApplicationContext(),DetailsStroredSuccessfully.class));
             }
         });
@@ -205,6 +209,9 @@ public class MainActivity extends AppCompatActivity implements AbsenteesListener
                     public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
 
                         if (error != null) {
+                            if (progressDialog.isShowing()) {
+                                progressDialog.dismiss();
+                            }
 
                             Log.e("Firestore error", error.getMessage());
                             return;
@@ -219,14 +226,17 @@ public class MainActivity extends AppCompatActivity implements AbsenteesListener
                             }
 
                             myAdapter.notifyDataSetChanged();
+                            if (progressDialog.isShowing()) {
+                                progressDialog.dismiss();
+                            }
 
 
                         }
-//                        if (arrayList.size() == 0) {
-//                            if (progressDialog.isShowing()) {
-//                                progressDialog.dismiss();
-//                            }
-//                        }
+                        if (arrayList.size() == 0) {
+                            if (progressDialog.isShowing()) {
+                                progressDialog.dismiss();
+                            }
+                        }
 
 
                     }

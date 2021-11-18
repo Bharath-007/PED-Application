@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -33,6 +34,7 @@ public class PEDSelectGameActivity extends AppCompatActivity {
     ArrayList<GamesHelperClass> arrayList;
     FirebaseFirestore firestore;
     RecyclerView recyclerView;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,11 @@ public class PEDSelectGameActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage("Please wait...");
+        progressDialog.show();
 
         arrayList = new ArrayList<>();
 
@@ -68,6 +75,9 @@ public class PEDSelectGameActivity extends AppCompatActivity {
                     public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
 
                         if (error != null) {
+                            if (progressDialog.isShowing()) {
+                                progressDialog.dismiss();
+                            }
 
                             Log.e("Firestore error", error.getMessage());
                             return;
@@ -82,78 +92,21 @@ public class PEDSelectGameActivity extends AppCompatActivity {
                             }
 
                             myAdapter.notifyDataSetChanged();
+                            if (progressDialog.isShowing()) {
+                                progressDialog.dismiss();
+                            }
 
 
                         }
-//                        if (arrayList.size() == 0) {
-//                            if (progressDialog.isShowing()) {
-//                                progressDialog.dismiss();
-//                            }
-//                        }
+                        if (arrayList.size() == 0) {
+                            if (progressDialog.isShowing()) {
+                                progressDialog.dismiss();
+                            }
+                        }
 
 
                     }
                 });
-
-//        firestore.collection("captains").orderBy("game", Query.Direction.ASCENDING).addSnapshotListener(new EventListener<QuerySnapshot>() {
-//            @Override
-//            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-//
-//                if (error != null) {
-//
-//                    Log.e("Firestore error", error.getMessage());
-//                    return;
-//                }
-//
-//                for (DocumentChange dc : value.getDocumentChanges()) {
-//
-//                    if (dc.getType() == DocumentChange.Type.ADDED) {
-//
-//                        arrayList.add(dc.getDocument().toObject(GamesHelperClass.class));
-//
-//                    }
-//
-//
-//
-//                }
-//
-//
-//
-//            }
-//        });
-
-//        firestore.collection("captains")
-//                .addSnapshotListener(new EventListener<QuerySnapshot>() {
-//                    @Override
-//                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-//
-//                        if (error != null) {
-//
-//                            Log.e("Firestore error", error.getMessage());
-//                            return;
-//                        }
-//
-//                        for (DocumentChange dc : value.getDocumentChanges()) {
-//
-//                            if (dc.getType() == DocumentChange.Type.ADDED) {
-//
-//                                arrayList.add(dc.getDocument().toString());
-//
-//                            }
-//
-//                            myAdapter.notifyDataSetChanged();
-//
-//
-//                        }
-////                        if (arrayList.size() == 0) {
-////                            if (progressDialog.isShowing()) {
-////                                progressDialog.dismiss();
-////                            }
-////                        }
-//
-//
-//                    }
-//                });
 
 
     }

@@ -33,8 +33,29 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/listname"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Present List"
+                android:fontFamily="@font/poppinsmedium"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+
+            </TextView>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:orientation="vertical"
-            android:layout_weight="5.4">
+            android:layout_weight="5">
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:id="@+id/Rviewpresent"

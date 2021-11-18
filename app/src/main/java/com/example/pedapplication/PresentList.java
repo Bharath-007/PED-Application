@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -25,6 +26,8 @@ public class PresentList extends AppCompatActivity {
     RecyclerView recyclerView;
     PEDStudentsListAdapter myAdapter;
     FirebaseFirestore firestore;
+    TextView textView;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,8 @@ public class PresentList extends AppCompatActivity {
         setContentView(R.layout.activity_present_list);
 
 
+
+        textView = findViewById(R.id.listname);
         SharedPreferences prefs1 = PreferenceManager.getDefaultSharedPreferences(this);
         String listname = prefs1.getString("listnameped", "no_id");
 
@@ -39,6 +44,14 @@ public class PresentList extends AppCompatActivity {
         arrayList = new ArrayList<>();
 
         System.out.println(listname);
+
+
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage("Please wait...");
+        progressDialog.show();
+
+        textView.setText(listname);
 
 
 
@@ -82,6 +95,9 @@ public class PresentList extends AppCompatActivity {
                     public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
 
                         if (error != null) {
+                            if (progressDialog.isShowing()) {
+                                progressDialog.dismiss();
+                            }
 
                             Log.e("Firestore error", error.getMessage());
                             return;
@@ -96,14 +112,17 @@ public class PresentList extends AppCompatActivity {
                             }
 
                             myAdapter.notifyDataSetChanged();
+                            if (progressDialog.isShowing()) {
+                                progressDialog.dismiss();
+                            }
 
 
                         }
-//                        if (arrayList.size() == 0) {
-//                            if (progressDialog.isShowing()) {
-//                                progressDialog.dismiss();
-//                            }
-//                        }
+                        if (arrayList.size() == 0) {
+                            if (progressDialog.isShowing()) {
+                                progressDialog.dismiss();
+                            }
+                        }
 
 
                     }

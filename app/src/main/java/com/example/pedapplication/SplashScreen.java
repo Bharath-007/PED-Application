@@ -38,8 +38,7 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(() -> {
             Intent intent= new Intent(SplashScreen.this, RegisterIntro.class);
 //                startActivity(intent);
-            startActivity(intent,
-                    ActivityOptions.makeSceneTransitionAnimation(SplashScreen.this).toBundle());
+            startActivity(intent);
 
 
             finish();
