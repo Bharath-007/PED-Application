@@ -23,6 +23,7 @@ public class Captain_Calendar extends AppCompatActivity {
     TextView selectedDate;
     Button nextbtn;
 
+
     FirebaseFirestore firestore;
     String date;
     @Override
@@ -37,13 +38,18 @@ public class Captain_Calendar extends AppCompatActivity {
         selectedDate = findViewById(R.id.selectedDate);
         nextbtn = findViewById(R.id.calenderNxtbtn);
 
+        final Calendar calendar = Calendar.getInstance();
+
+        calendarView.setMinDate(calendar.getTimeInMillis());
+        calendarView.setMaxDate(calendar.getTimeInMillis() + 1);
+        calendarView.setDate(calendar.getTimeInMillis());
+
 
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
                 date = i2 + "." + i1 + "." + i;
                 selectedDate.setText("Selected Date is : " + date);
-
 
             }
         });
@@ -60,6 +66,8 @@ public class Captain_Calendar extends AppCompatActivity {
                 editor.putString("date2", date); //InputString: from the EditText
                 editor.commit();
                 startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                calendarView = findViewById(R.id.calender);
+                calendarView.setMinDate(calendar.getTimeInMillis()+1);
             }
         });
 

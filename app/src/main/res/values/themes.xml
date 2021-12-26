@@ -3,7 +3,7 @@
     <style name="Theme.PEDApplication" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/liteBlue</item>
-        <item name="colorPrimaryVariant">@color/liteBlue</item>
+        <item name="colorPrimaryVariant">@color/blue</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/black</item>
@@ -13,6 +13,7 @@
         <!-- Customize your theme here. -->
     </style>
 
+    //statusBar
     <style name="Theme.PEDApplication.NoActionAndStatusBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

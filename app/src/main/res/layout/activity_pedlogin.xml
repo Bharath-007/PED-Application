@@ -43,7 +43,7 @@
             android:layout_marginRight="48dp"
             android:layout_weight=".8"
             android:enabled="true"
-            android:hint="Select game"
+            android:hint="PED Staff"
             android:textColorHint="@color/black"
             app:boxStrokeColor="@color/black"
             app:endIconDrawable="@drawable/drpdownvector"

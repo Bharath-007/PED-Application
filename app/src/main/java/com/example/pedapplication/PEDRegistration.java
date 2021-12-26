@@ -48,5 +48,6 @@ public class PEDRegistration extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         startActivity(new Intent(getApplicationContext(),PEDlogin.class));
+        finish();
     }
 }

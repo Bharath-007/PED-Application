@@ -3,6 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Bharath/Downloads/PEDApplication/PEDApplication/app/src/main/res/layout/absentees_toolbar.xml" value="0.24456521739130435" />
+        <entry key="..\:/Users/Bharath/Downloads/PEDApplication/PEDApplication/app/src/main/res/layout/activity_add_student.xml" value="0.24456521739130435" />
+        <entry key="..\:/Users/Bharath/Downloads/PEDApplication/PEDApplication/app/src/main/res/layout/activity_captain_calendar.xml" value="0.24456521739130435" />
+        <entry key="..\:/Users/Bharath/Downloads/PEDApplication/PEDApplication/app/src/main/res/layout/activity_captain_registration.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Bharath/Downloads/PEDApplication/PEDApplication/app/src/main/res/layout/activity_details_strored_successfully.xml" value="0.24456521739130435" />
+        <entry key="..\:/Users/Bharath/Downloads/PEDApplication/PEDApplication/app/src/main/res/layout/activity_get_captain_code.xml" value="0.24456521739130435" />
+        <entry key="..\:/Users/Bharath/Downloads/PEDApplication/PEDApplication/app/src/main/res/layout/activity_main.xml" value="0.24456521739130435" />
+        <entry key="..\:/Users/Bharath/Downloads/PEDApplication/PEDApplication/app/src/main/res/layout/activity_ped_calender.xml" value="0.24456521739130435" />
+        <entry key="..\:/Users/Bharath/Downloads/PEDApplication/PEDApplication/app/src/main/res/layout/activity_pedselect_game.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Bharath/Downloads/PEDApplication/PEDApplication/app/src/main/res/layout/activity_select_ped.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Bharath/Downloads/PEDApplication/PEDApplication/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
+        <entry key="..\:/Users/Bharath/Downloads/PEDApplication/PEDApplication/app/src/main/res/layout/header.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Bharath/Downloads/PEDApplication/PEDApplication/app/src/main/res/layout/od_toolbar.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/Sathya Prakaash/AndroidStudioProjects/PEDApplication/app/src/main/res/drawable-v24/successbtn1.xml" value="0.19166666666666668" />
         <entry key="..\:/Users/Sathya Prakaash/AndroidStudioProjects/PEDApplication/app/src/main/res/drawable/btnshape.xml" value="0.18871794871794872" />
         <entry key="..\:/Users/Sathya Prakaash/AndroidStudioProjects/PEDApplication/app/src/main/res/drawable/gamesitem.xml" value="0.19166666666666668" />
@@ -42,6 +55,15 @@
         <entry key="..\:/Users/Sathya Prakaash/AndroidStudioProjects/PEDApplication/app/src/main/res/menu/navigation_drawer.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/Sathya Prakaash/AndroidStudioProjects/PEDApplication/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
         <entry key="..\:/Users/Sathya Prakaash/AndroidStudioProjects/PEDApplication/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
+        <entry key="..\:/project/PEDApplication/PEDApplication/app/src/main/res/layout/activity_captain_calendar.xml" value="0.24003623188405798" />
+        <entry key="..\:/project/PEDApplication/PEDApplication/app/src/main/res/layout/activity_login.xml" value="0.1897644927536232" />
+        <entry key="..\:/project/PEDApplication/PEDApplication/app/src/main/res/layout/activity_main.xml" value="0.1897644927536232" />
+        <entry key="..\:/project/PEDApplication/PEDApplication/app/src/main/res/layout/activity_pedlogin.xml" value="0.24003623188405798" />
+        <entry key="..\:/project/PEDApplication/PEDApplication/app/src/main/res/layout/activity_pedregistration.xml" value="0.1897644927536232" />
+        <entry key="..\:/project/PEDApplication/PEDApplication/app/src/main/res/layout/activity_pedselect_game.xml" value="0.8800000000000001" />
+        <entry key="..\:/project/PEDApplication/PEDApplication/app/src/main/res/layout/activity_register_intro.xml" value="0.1897644927536232" />
+        <entry key="..\:/project/PEDApplication/PEDApplication/app/src/main/res/layout/od_toolbar.xml" value="0.24003623188405798" />
+        <entry key="..\:/project/PEDApplication/PEDApplication/app/src/main/res/layout/studentitem.xml" value="0.24003623188405798" />
       </map>
     </option>
   </component>

@@ -54,7 +54,7 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
-    <string name="new_user_register">New Staff? <b>PED Register</b></string>
+    <string name="new_user_register">New User?<b>Change PIN</b></string>
 
 
     <string-array name="departmentnames">

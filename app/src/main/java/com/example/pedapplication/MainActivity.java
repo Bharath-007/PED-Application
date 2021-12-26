@@ -9,13 +9,18 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.CalendarView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -32,6 +37,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity implements AbsenteesListener,PresentListener,RestListener,ODListener {
@@ -45,6 +51,10 @@ public class MainActivity extends AppCompatActivity implements AbsenteesListener
     MyAdapter myAdapter;
     ProgressDialog progressDialog;
     HashMap<String,String> hm;
+    CalendarView calendarView;
+    Calendar calendar;
+    ArrayList<GamesHelperClass> arrayList2;
+    ArrayList<String> datearray;
 
 
 
@@ -52,6 +62,14 @@ public class MainActivity extends AppCompatActivity implements AbsenteesListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+
+        Window window = MainActivity.this.getWindow();
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.setStatusBarColor(ContextCompat.getColor(MainActivity.this, R.color.blue));
         //getting the date which captain selects to store the attendance details into the database
         SharedPreferences prefs1 = PreferenceManager.getDefaultSharedPreferences(this);
         String get_date2 = prefs1.getString("date2", "no_id");
@@ -83,6 +101,8 @@ public class MainActivity extends AppCompatActivity implements AbsenteesListener
         odList = new ArrayList<>();
         restList = new ArrayList<>();
         presentList = new ArrayList<>();
+        arrayList2 = new ArrayList<>();
+        datearray = new ArrayList<>();
 
         firestore = FirebaseFirestore.getInstance();
 
@@ -99,6 +119,8 @@ public class MainActivity extends AppCompatActivity implements AbsenteesListener
 
         EventChangeListener();
         System.out.println(arrayList);
+        EventChangeListener2();
+
 
         setSupportActionBar(toolbar);
         navigationView.bringToFront();
@@ -115,10 +137,21 @@ public class MainActivity extends AppCompatActivity implements AbsenteesListener
                 startActivity((new Intent(getApplicationContext(), AddStudent.class)));
             }
         });
+        HashMap<String,String> hashMap = new HashMap<>();
+        hashMap.put("game",get_date2);
 
         confirmbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                for(GamesHelperClass g:arrayList2){
+                    datearray.add(g.game);
+                }
+
+                if(datearray.contains(get_date2)){
+                    Toast.makeText(getApplicationContext(), "Record Exists. Come back tomorrow! ", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
 
                 for(Students present: presentList){
@@ -130,6 +163,8 @@ public class MainActivity extends AppCompatActivity implements AbsenteesListener
                     hm.put("gender", present.gender);
                     DocumentReference documentReference = firestore.collection("captains").document(data).collection("Attendance").document(get_date2).collection("PresentList").document(hm.get("name") + " " + hm.get("rollno"));
                     documentReference.set(hm);
+                    DocumentReference documentReference1 = firestore.collection("captains").document(data).collection("Attendance").document(get_date2);
+                    documentReference1.set(hashMap);
                 }
                 for(Students present: absenteesList){
                     hm.put("status","Absent");
@@ -140,6 +175,8 @@ public class MainActivity extends AppCompatActivity implements AbsenteesListener
                     hm.put("gender", present.gender);
                     DocumentReference documentReference = firestore.collection("captains").document(data).collection("Attendance").document(get_date2).collection("AbsenteesList").document(hm.get("name") + " " + hm.get("rollno"));
                     documentReference.set(hm);
+                    DocumentReference documentReference1 = firestore.collection("captains").document(data).collection("Attendance").document(get_date2);
+                    documentReference1.set(hashMap);
                 }
                 for(Students present: odList){
                     hm.put("status","OD");
@@ -150,6 +187,8 @@ public class MainActivity extends AppCompatActivity implements AbsenteesListener
                     hm.put("gender", present.gender);
                     DocumentReference documentReference = firestore.collection("captains").document(data).collection("Attendance").document(get_date2).collection("ODList").document(hm.get("name") + " " + hm.get("rollno"));
                     documentReference.set(hm);
+                    DocumentReference documentReference1 = firestore.collection("captains").document(data).collection("Attendance").document(get_date2);
+                    documentReference1.set(hashMap);
                 }
                 for(Students present: restList){
                     hm.put("status","Rest");
@@ -160,13 +199,16 @@ public class MainActivity extends AppCompatActivity implements AbsenteesListener
                     hm.put("gender", present.gender);
                     DocumentReference documentReference = firestore.collection("captains").document(data).collection("Attendance").document(get_date2).collection("RestList").document(hm.get("name") + " " + hm.get("rollno"));
                     documentReference.set(hm);
+                    DocumentReference documentReference1 = firestore.collection("captains").document(data).collection("Attendance").document(get_date2);
+                    documentReference1.set(hashMap);
                 }
                 list.addAll(presentList);
                 list.addAll(absenteesList);
                 list.addAll(odList);
                 list.addAll(restList);
 
-                
+                //calender lock current date
+
                startActivity(new Intent(getApplicationContext(),DetailsStroredSuccessfully.class));
             }
         });
@@ -198,6 +240,7 @@ public class MainActivity extends AppCompatActivity implements AbsenteesListener
             super.onBackPressed();
         }
     }
+
 
     private void EventChangeListener() {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
@@ -244,7 +287,49 @@ public class MainActivity extends AppCompatActivity implements AbsenteesListener
 
 
     }
+    private void EventChangeListener2() {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        String data = prefs.getString("message", "no_id");
 
+        firestore.collection("captains").document(data).collection("Attendance")
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+
+                        if (error != null) {
+                            if (progressDialog.isShowing()) {
+                                progressDialog.dismiss();
+                            }
+
+                            Log.e("Firestore error", error.getMessage());
+                            return;
+                        }
+
+                        for (DocumentChange dc : value.getDocumentChanges()) {
+
+                            if (dc.getType() == DocumentChange.Type.ADDED) {
+
+                                arrayList2.add(dc.getDocument().toObject(GamesHelperClass.class));
+
+                            }
+
+                            myAdapter.notifyDataSetChanged();
+                            if (progressDialog.isShowing()) {
+                                progressDialog.dismiss();
+                            }
+
+
+                        }
+                        if (arrayList.size() == 0) {
+                            if (progressDialog.isShowing()) {
+                                progressDialog.dismiss();
+                            }
+                        }
+
+
+                    }
+                });
+    }
 
     @Override
     public void onAbsenteesQuantityChange(ArrayList<Students> arrayList) {

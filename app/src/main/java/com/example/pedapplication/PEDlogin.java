@@ -160,4 +160,11 @@ public class PEDlogin extends AppCompatActivity {
 
 
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(getApplicationContext(),RegisterIntro.class));
+        finish();
+    }
 }

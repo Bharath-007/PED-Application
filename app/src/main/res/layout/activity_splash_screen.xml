@@ -3,54 +3,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp"
+    android:background="@color/blue"
     android:orientation="vertical"
     android:weightSum="6"
     tools:context=".SplashScreen">
 
-    <TextView
-        android:id="@+id/drngpit"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:fontFamily="@font/berlinsansfbregular"
+        android:layout_weight="1.5">
+        <ImageView
+            android:id="@+id/splPed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/pedtext"
+            android:layout_margin="30dp">
+        </ImageView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3">
+        <ImageView
+            android:id="@+id/splLogo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/spllogo"
+            android:layout_margin="45dp">
+        </ImageView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:orientation="vertical"
         android:gravity="center|bottom"
-        android:letterSpacing="0.02"
-        android:text="Dr.N.G.P. INSTITUTE OF TECHNOLOGY"
-        android:textColor="@color/blue2"
-        android:textSize="30sp" />
+        android:layout_marginBottom="10dp"
+        android:weightSum="3">
 
-    <TextView
-        android:id="@+id/ped"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:fontFamily="@font/poppinsmedium"
-        android:gravity="center"
-        android:text="Physical Education Department"
-        android:textAllCaps="false"
-        android:textColor="@color/blue2"
-        android:textSize="26sp" />
+        <ImageView
+            android:id="@+id/sportIcon"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/sp12">
+        </ImageView>
+        <ImageView
+            android:id="@+id/sportCommunity"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.38"
+            android:src="@drawable/sports_community"
+            android:layout_marginTop="10dp">
+        </ImageView>
+    </LinearLayout>
 
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginRight="60dp"
-        android:layout_marginBottom="60dp"
-        android:layout_weight="3"
-        android:src="@drawable/logo2" />
-
-    <TextView
-        android:id="@+id/sp"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:fontFamily="@font/poppinsmedium"
-        android:gravity="center_horizontal"
-        android:text="Sports Students Attendence"
-        android:textAllCaps="false"
-        android:textColor="@color/blue"
-        android:textSize="26sp"></TextView>
 </LinearLayout>
