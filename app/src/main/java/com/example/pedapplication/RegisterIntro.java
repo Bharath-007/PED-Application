@@ -32,5 +32,12 @@ public class RegisterIntro extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),PEDlogin.class));
             }
         });
+
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(getApplicationContext(),RegisterIntro.class));
+        finish();
     }
 }
